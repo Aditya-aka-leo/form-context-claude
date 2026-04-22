@@ -32,10 +32,10 @@ Extract:
 ### Step 2 — Resolve auth
 
 Check in this order:
-1. File `.aem-auth` at the project root — use first line as bearer token
+1. File `.aem-auth` at the project root — use entire contents as the `Cookie` header value
 2. Environment variable `AEM_AUTH`
-3. If neither exists, ask the user:
-   > "I need an AEM auth token to fetch the model. Paste your bearer token or cookie value (DevTools → Network → any AEM request → Authorization header). I'll save it to `.aem-auth` for future use."
+3. If neither exists, ask the user to get the full cookie string:
+   > "I need your AEM session cookie. In Chrome DevTools on the AEM tab: Network → click any request to the AEM host → Request Headers → copy the full `Cookie:` header value. Paste it here and I'll save it to `.aem-auth`."
 
    Save their response to `.aem-auth` and ensure `.aem-auth` is in `.gitignore`.
 
@@ -46,14 +46,10 @@ Construct the model URL:
 <base-host><content-path>/jcr:content/root/section/form.model.json
 ```
 
-Fetch using curl:
+Fetch using curl with the full cookie string from `.aem-auth`:
 ```bash
-curl -s -H "Authorization: Bearer <token>" "<model-url>"
-```
-
-If 401 or empty, retry with cookie header:
-```bash
-curl -s -H "Cookie: login-token=<token>" "<model-url>"
+COOKIE=$(cat .aem-auth)
+curl -s -H "Cookie: $COOKIE" "<model-url>"
 ```
 
 Save to:
@@ -63,13 +59,25 @@ forms/<form-name>/<form-name>.model.json
 
 ### Step 4 — Build the fragment index (do NOT fetch fragments yet)
 
-Scan the saved model JSON for fragment references. Look for:
-- `"fd:fragment"` property values
-- `"fragmentPath"` property values
-- Any string matching `/content/forms/af/.*/fragments/.*` or `/content/dam/formsanddocuments/.*`
+Scan the saved model JSON for fragment references using Node (the `fragmentPath` key is what AEM uses):
 
 ```bash
-grep -oE '"/content/forms/af/[^"]*"' forms/<form-name>/<form-name>.model.json | tr -d '"' | grep -v '<form-name>' | sort -u
+node -e "
+const fs = require('fs');
+const model = JSON.parse(fs.readFileSync('forms/<form-name>/<form-name>.model.json', 'utf8'));
+const fragments = {};
+function scan(obj) {
+  if (!obj || typeof obj !== 'object') return;
+  for (const [k, v] of Object.entries(obj)) {
+    if (k === 'fragmentPath' && typeof v === 'string' && v.startsWith('/content/'))
+      fragments[v.split('/').pop()] = v;
+    if (typeof v === 'object') scan(v);
+    if (Array.isArray(v)) v.forEach(scan);
+  }
+}
+scan(model);
+console.log(JSON.stringify(fragments, null, 2));
+"
 ```
 
 Write the index to `forms/<form-name>/fragments.json`:
@@ -109,11 +117,8 @@ Fragments will be fetched on demand when relevant to the discussion.
 2. If the fragment model file does NOT already exist locally at `forms/<form-name>/fragments/<fragment-name>.model.json`, fetch it:
 
 ```bash
-# Read auth token
-AUTH=$(cat .aem-auth)
-
-# Fetch fragment model
-curl -s -H "Authorization: Bearer $AUTH" \
+COOKIE=$(cat .aem-auth)
+curl -s -H "Cookie: $COOKIE" \
   "<base-host><fragment-content-path>/jcr:content/root/section/form.model.json" \
   -o "forms/<form-name>/fragments/<fragment-name>.model.json"
 ```
