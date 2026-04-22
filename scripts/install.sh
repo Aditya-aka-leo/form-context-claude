@@ -53,7 +53,12 @@ else
   echo "  ✓ created .gitignore"
 fi
 
-# 4. Create forms/ folder
+# 4. Copy scripts (distill.js needed at runtime)
+mkdir -p "$TARGET_DIR/scripts"
+cp "$REPO_ROOT/scripts/distill.js" "$TARGET_DIR/scripts/distill.js"
+echo "  ✓ scripts/distill.js"
+
+# 5. Create forms/ folder
 mkdir -p "$TARGET_DIR/forms"
 if [ ! -f "$TARGET_DIR/forms/.gitkeep" ]; then
   touch "$TARGET_DIR/forms/.gitkeep"
@@ -62,5 +67,7 @@ echo "  ✓ forms/ directory ready"
 
 echo ""
 echo "Done. Next steps:"
-echo "  1. Run /fetch-form-model <aem-url> in Claude Code to load a form"
-echo "  2. Claude will automatically fetch fragment context during discussions"
+echo "  1. Get your AEM cookie: DevTools → Network → any AEM request → copy Cookie header value"
+echo "  2. Save it: echo '<paste-cookie>' > .aem-auth"
+echo "  3. Run in Claude Code: /fetch-form-model <aem-form-url>"
+echo "  4. Claude will auto-fetch fragment context during discussions"
