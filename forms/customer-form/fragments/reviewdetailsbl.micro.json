@@ -1,0 +1,271 @@
+{
+  "title": "bankConsent",
+  "path": "/content/forms/af/hdfc/loans/assisted/bl/fragments/reviewdetailsbl/jcr:content/root/section/form",
+  "fields": [
+    {
+      "panel": "scheduleOfChargesWrapper",
+      "name": "scheduleOfCharges",
+      "fieldType": "button"
+    },
+    {
+      "panel": "pdWrapper2",
+      "name": "currentAddressCheckbox",
+      "fieldType": "checkbox",
+      "required": true
+    },
+    {
+      "panel": "personalEmailWrapper",
+      "name": "personalEmail",
+      "dataRef": "$.customerPersonalEmailId",
+      "fieldType": "email",
+      "required": true
+    },
+    {
+      "panel": "personalEmailWrapper",
+      "name": "verifyPersonalEmailButton",
+      "fieldType": "button"
+    },
+    {
+      "panel": "workEmailWrapper",
+      "name": "workEmail",
+      "dataRef": "$.customerWorkEmailId",
+      "fieldType": "email",
+      "required": true
+    },
+    {
+      "panel": "workEmailWrapper",
+      "name": "verifyWorkEmailButton",
+      "fieldType": "button"
+    },
+    {
+      "panel": "otpModal",
+      "name": "editEmailButton",
+      "fieldType": "button"
+    },
+    {
+      "panel": "otpModal",
+      "name": "otpInput",
+      "fieldType": "text-input",
+      "required": true
+    },
+    {
+      "panel": "otpModal",
+      "name": "resendOtpTimer",
+      "fieldType": "button",
+      "enabled": false
+    },
+    {
+      "panel": "otpModal",
+      "name": "otpAttemptsLeft",
+      "fieldType": "number-input",
+      "visible": false
+    },
+    {
+      "panel": "modalButtonWrapper",
+      "name": "otpverifybutton",
+      "fieldType": "button"
+    }
+  ],
+  "rules": [
+    {
+      "field": "scheduleOfCharges",
+      "event": "click",
+      "expr": "dispatchEvent($form, 'custom:showSOCPopUp')"
+    },
+    {
+      "field": "verifyPersonalEmailButton",
+      "event": "custom:wsdlSuccess_720548_1772090800578",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.otpModal, 'custom:personalEmailVerify'), {}) | if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($field, 'custom:personalEmailOtpGenSuccess'), {}) | if(toObject($event.payload.body).status.respo"
+    },
+    {
+      "field": "verifyPersonalEmailButton",
+      "event": "custom:wsdlSuccess_311939_1772090800579",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_311939_1772090800579', 'custom:decryptError_311939_1772090800579')"
+    },
+    {
+      "field": "verifyPersonalEmailButton",
+      "event": "initialize",
+      "expr": "setVariable('retries', 4, $field) | setVariable('attemptsLeft', 3, $field)"
+    },
+    {
+      "field": "verifyPersonalEmailButton",
+      "event": "click",
+      "expr": "if((true() && validate($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.personalEmail).length==0), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpGen.json'), 'POST', {\"requestData\": {\"otpGenRequest\": "
+    },
+    {
+      "field": "verifyPersonalEmailButton",
+      "event": "custom:personalEmailOtpGenSuccess",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+    },
+    {
+      "field": "verifyPersonalEmailButton",
+      "event": "custom:personalEmailOtpGenFailure",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+    },
+    {
+      "field": "verifyPersonalEmailButton",
+      "event": "custom:wsdlSuccess_444604_1772090800579",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_444604_1772090800579', 'custom:decryptError_444604_1772090800579')"
+    },
+    {
+      "field": "verifyPersonalEmailButton",
+      "event": "custom:wsdlError_720548_1772090800578",
+      "expr": "dispatchEvent(verifyAgainText, 'custom:setProperty', {visible : true()}) | dispatchEvent($field, 'custom:personalEmailOtpGenFailure')"
+    },
+    {
+      "field": "verifyWorkEmailButton",
+      "event": "custom:wsdlSuccess_147367_1772091323290",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_147367_1772091323290', 'custom:decryptError_147367_1772091323290')"
+    },
+    {
+      "field": "verifyWorkEmailButton",
+      "event": "custom:wsdlSuccess_759120_1772091323289",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.otpModal, 'custom:workEmailVerify'), {}) | if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($field, 'custom:workEmailOtpGenSuccess'), {}) | if(toObject($event.payload.body).status.responseCode "
+    },
+    {
+      "field": "verifyWorkEmailButton",
+      "event": "custom:wsdlSuccess_932188_1772091323289",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_932188_1772091323289', 'custom:decryptError_932188_1772091323289')"
+    },
+    {
+      "field": "verifyWorkEmailButton",
+      "event": "custom:wsdlError_759120_1772091323289",
+      "expr": "dispatchEvent(verifyAgainTextWork, 'custom:setProperty', {visible : true()}) | dispatchEvent($field, 'custom:workEmailOtpGenFailure')"
+    },
+    {
+      "field": "verifyWorkEmailButton",
+      "event": "initialize",
+      "expr": "setVariable('retries', 4, $field) | setVariable('attemptsLeft', 3, $field)"
+    },
+    {
+      "field": "verifyWorkEmailButton",
+      "event": "custom:workEmailOtpGenFailure",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+    },
+    {
+      "field": "verifyWorkEmailButton",
+      "event": "click",
+      "expr": "if((true() && validate($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.workEmail).length==0), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpGen.json'), 'POST', {\"requestData\": {\"otpGenRequest\": {\"type\":"
+    },
+    {
+      "field": "verifyWorkEmailButton",
+      "event": "custom:workEmailOtpGenSuccess",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+    },
+    {
+      "field": "otpModal",
+      "event": "custom:wsdlSuccess_774077_1776360556028",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_774077_1776360556028', 'custom:decryptError_774077_1776360556028')"
+    },
+    {
+      "field": "otpModal",
+      "event": "custom:personalEmailAttemptExhausted",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+    },
+    {
+      "field": "otpModal",
+      "event": "custom:workEmailVerified",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+    },
+    {
+      "field": "otpModal",
+      "event": "custom:workEmailVerify",
+      "expr": "{visible : true()} | dispatchEvent($field, 'custom:resendOtpTimer') | dispatchEvent(resendOtpTimer, 'custom:resetOtpCounter') | dispatchEvent(otpInput, 'reset') | dispatchEvent(otpHeadingWork, 'custom:setProperty', {visible : true()}) | dispatchEvent(otpMessageWork, 'custom:setProperty', {visible : "
+    },
+    {
+      "field": "otpModal",
+      "event": "custom:personalEmailVerify",
+      "expr": "dispatchEvent(otpInput, 'reset') | dispatchEvent(resendOtpTimer, 'custom:resetOtpCounter') | dispatchEvent(otpInput, 'reset') | {visible : true()} | dispatchEvent(otpHeading, 'custom:setProperty', {visible : true()}) | dispatchEvent(otpMessage, 'custom:setProperty', {visible : true()}) | dispatchEve"
+    },
+    {
+      "field": "otpModal",
+      "event": "custom:workEmailAttemptExhausted",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+    },
+    {
+      "field": "otpModal",
+      "event": "custom:wsdlSuccess_557193_1776360556028",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_557193_1776360556028', 'custom:decryptError_557193_1776360556028')"
+    },
+    {
+      "field": "otpModal",
+      "event": "custom:personalEmailVerified",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+    },
+    {
+      "field": "otpModal",
+      "event": "custom:wsdlSuccess_040005_1776360556028",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_040005_1776360556028', 'custom:decryptError_040005_1776360556028')"
+    },
+    {
+      "field": "otpModal",
+      "event": "custom:wsdlSuccess_565367_1776360556029",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_565367_1776360556029', 'custom:decryptError_565367_1776360556029')"
+    },
+    {
+      "field": "editEmailButton",
+      "event": "click",
+      "expr": "dispatchEvent($form.otpModal, 'custom:setProperty', {visible : false()})"
+    },
+    {
+      "field": "resendOtpTimer",
+      "event": "custom:wsdlError_962162_1771910656619",
+      "expr": "dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyAgainText, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPerso"
+    },
+    {
+      "field": "resendOtpTimer",
+      "event": "custom:wsdlSuccess_182366_1771910656619",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', setVariable('retries', (getVariable('retries', $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyWorkEmailButton) - 1), $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper."
+    },
+    {
+      "field": "resendOtpTimer",
+      "event": "custom:wsdlError_182366_1771910656619",
+      "expr": "dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyAgainTextWork, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyWorkEmail"
+    },
+    {
+      "field": "resendOtpTimer",
+      "event": "custom:wsdlSuccess_962162_1771910656619",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', setVariable('retries', (getVariable('retries', $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPersonalEmailButton) - 1), $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmail"
+    },
+    {
+      "field": "resendOtpTimer",
+      "event": "click",
+      "expr": "if((true() && getVariable('emailType', $form.otpModal) == 'W'), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpGen.json'), 'POST', {\"requestData\": {\"otpGenRequest\": {\"type\": 'email',\"mobileNo\": getVariable('mob'),\"typeOfEmail\": 'W',\"email\": $form.revi"
+    },
+    {
+      "field": "otpverifybutton",
+      "event": "custom:decryptSuccess_388009_1772087204922",
+      "expr": "handleEmailOtpSuccess(getVariable('emailType', $form.otpModal),$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyWorkEmailButton,$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.workEmailHelperText,$fo"
+    },
+    {
+      "field": "otpverifybutton",
+      "event": "custom:wsdlError_388009_1772087204922",
+      "expr": "dispatchEvent($form.otpModal.verifyAgainTextOtpModal, 'custom:setProperty', {visible : true()})"
+    },
+    {
+      "field": "otpverifybutton",
+      "event": "custom:wsdlSuccess_324931_1772087204922",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_324931_1772087204922', 'custom:decryptError_324931_1772087204922')"
+    },
+    {
+      "field": "otpverifybutton",
+      "event": "custom:wsdlSuccess_388009_1772087204922",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_388009_1772087204922', 'custom:decryptError_388009_1772087204922')"
+    },
+    {
+      "field": "otpverifybutton",
+      "event": "custom:decryptSuccess_324931_1772087204922",
+      "expr": "handleEmailOtpSuccess(getVariable('emailType', $form.otpModal),$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPersonalEmailButton,$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.personalEma"
+    },
+    {
+      "field": "otpverifybutton",
+      "event": "click",
+      "expr": "if((true() && (validate($form.otpModal.otpInput).length==0 && (getVariable('emailType', $form.otpModal) == 'P' && getVariable('attemptsLeft', $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPersonalEmailButton) > 0))), awaitFn(retryHandler(re"
+    },
+    {
+      "field": "otpverifybutton",
+      "event": "custom:wsdlError_324931_1772087204922",
+      "expr": "dispatchEvent($form.otpModal.verifyAgainTextOtpModal, 'custom:setProperty', {visible : true()})"
+    }
+  ]
+}

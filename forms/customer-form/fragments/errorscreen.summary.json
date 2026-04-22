@@ -1,6 +1,5 @@
 {
   "title": "errorScreen",
-  "fieldType": "form",
   "path": "/content/forms/af/hdfc/loans/assisted/common/fragments/errorscreen/jcr:content/root/section/form",
   "items": {
     "button": {

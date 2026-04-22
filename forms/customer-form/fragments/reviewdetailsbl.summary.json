@@ -1,6 +1,5 @@
 {
   "title": "bankConsent",
-  "fieldType": "form",
   "path": "/content/forms/af/hdfc/loans/assisted/bl/fragments/reviewdetailsbl/jcr:content/root/section/form",
   "items": {
     "panelcontainer": {

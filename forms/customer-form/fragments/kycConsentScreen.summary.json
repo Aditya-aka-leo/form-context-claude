@@ -1,6 +1,5 @@
 {
   "title": "kycConsentScreen",
-  "fieldType": "form",
   "path": "/content/forms/af/hdfc/loans/assisted/bl/fragments/kycConsentScreen/jcr:content/root/section/form",
   "items": {
     "panelcontainer": {
