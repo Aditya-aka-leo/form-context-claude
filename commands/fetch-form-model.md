@@ -46,10 +46,14 @@ Construct the model URL:
 <base-host><content-path>/jcr:content/root/section/form.model.json
 ```
 
-Fetch using curl with the full cookie string from `.aem-auth`:
+Fetch and prettify using curl + node:
 ```bash
 COOKIE=$(cat .aem-auth)
-curl -s -H "Cookie: $COOKIE" "<model-url>"
+curl -s -H "Cookie: $COOKIE" "<model-url>" | node -e "
+  const d = [];
+  process.stdin.on('data', c => d.push(c));
+  process.stdin.on('end', () => process.stdout.write(JSON.stringify(JSON.parse(d.join('')), null, 2)));
+" > forms/<form-name>/<form-name>.model.json
 ```
 
 Save to:
@@ -119,8 +123,11 @@ Fragments will be fetched on demand when relevant to the discussion.
 ```bash
 COOKIE=$(cat .aem-auth)
 curl -s -H "Cookie: $COOKIE" \
-  "<base-host><fragment-content-path>/jcr:content/root/section/form.model.json" \
-  -o "forms/<form-name>/fragments/<fragment-name>.model.json"
+  "<base-host><fragment-content-path>/jcr:content/root/section/form.model.json" | node -e "
+  const d = [];
+  process.stdin.on('data', c => d.push(c));
+  process.stdin.on('end', () => process.stdout.write(JSON.stringify(JSON.parse(d.join('')), null, 2)));
+" > "forms/<form-name>/fragments/<fragment-name>.model.json"
 ```
 
 3. Read and use the saved fragment model for the current discussion
