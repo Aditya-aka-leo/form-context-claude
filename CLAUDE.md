@@ -4,13 +4,13 @@ This project caches AEM form models locally under `forms/` so Claude has field-l
 
 ## File tiers (read in this order, stop when you have enough)
 
-| File | Size | Use when |
-|---|---|---|
-| `<name>.micro.json` | ~5-65KB | First look — field index + non-trivial rules |
-| `<name>.summary.json` | ~5-214KB | Need full field details, events, visibility rules |
-| `<name>.model.json` | raw, large | Last resort — deep debugging only |
+| Tier | File | Size | Use when |
+|---|---|---|---|
+| 1 | `<name>.micro.json` | ~5-65KB | First look — field index + non-trivial rules |
+| 2 | `<name>.summary.json` | ~5-214KB | Full field details, events, visibility rules |
+| 3 | `<name>.model.json` | raw, large | **Safety net** — always available locally, use if tiers 1-2 miss something |
 
-`micro.json` is only generated for fragments/forms whose summary exceeds 20KB. For small fragments, go straight to `summary.json`.
+Always start at tier 1 and escalate only as needed. `micro.json` is only generated when summary exceeds 20KB — for small fragments go straight to `summary.json`. The raw `model.json` is gitignored but present locally after fetch — it is the ground truth and loses nothing.
 
 ---
 
@@ -87,6 +87,28 @@ Read `summary.json` when:
 Read `model.json` only when:
 - You need the raw component IDs to correlate with AEM author UI
 - The summary still doesn't show a specific field you know exists
+- A rule attached to a `plain-text` or `image` component is suspected (these are stripped from distilled files)
+- You want to verify nothing was lost in distillation
+
+**The raw `model.json` is always available locally** (gitignored but present after fetch). Read it directly:
+```bash
+# Base form
+forms/<form-name>/<form-name>.model.json
+
+# Fragment
+forms/<form-name>/fragments/<fragment-name>.model.json
+```
+
+If the file doesn't exist locally (not yet fetched), re-fetch it:
+```bash
+COOKIE=$(cat .aem-auth)
+curl -s -H "Cookie: $COOKIE" \
+  "<baseHost><contentPath>/jcr:content/root/section/form.model.json" | node -e "
+  const d=[];
+  process.stdin.on('data',c=>d.push(c));
+  process.stdin.on('end',()=>process.stdout.write(JSON.stringify(JSON.parse(d.join('')),null,2)));
+" > "forms/<form-name>/fragments/<name>.model.json"
+```
 
 ---
 
