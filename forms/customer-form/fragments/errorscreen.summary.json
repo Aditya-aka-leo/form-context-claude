@@ -1,0 +1,57 @@
+{
+  "title": "errorScreen",
+  "fieldType": "form",
+  "path": "/content/forms/af/hdfc/loans/assisted/common/fragments/errorscreen/jcr:content/root/section/form",
+  "items": {
+    "button": {
+      "name": "tryAgainCTA",
+      "fieldType": "button",
+      "type": "string",
+      "label": "<p>Try Again</p>",
+      "visible": false,
+      "events": {
+        "click": "dispatchEvent('custom:errorTryAgainClicked')",
+        "custom:setProperty": "$event.payload"
+      },
+      "rules": {
+        "validationStatus": "valid"
+      }
+    },
+    "button_106835561": {
+      "name": "redirectCustomerDBScreenCTA",
+      "fieldType": "button",
+      "type": "string",
+      "label": "<p>Okay</p>",
+      "events": {
+        "click": [
+          "dispatchEvent($form, 'custom:otpFailedThreeAttempt')",
+          "dispatchEvent('custom:ErrorOkClicked')"
+        ],
+        "custom:setProperty": "$event.payload"
+      },
+      "rules": {
+        "validationStatus": "valid"
+      }
+    },
+    "textinput": {
+      "name": "journeyName",
+      "fieldType": "text-input",
+      "type": "string",
+      "label": "<p>Hidden Journey Name</p>",
+      "visible": false,
+      "events": {
+        "custom:setProperty": "$event.payload"
+      }
+    },
+    "textinput_1903530863": {
+      "name": "flowType",
+      "fieldType": "text-input",
+      "type": "string",
+      "label": "<p>Hidden Flow Type</p>",
+      "visible": false,
+      "events": {
+        "custom:setProperty": "$event.payload"
+      }
+    }
+  }
+}

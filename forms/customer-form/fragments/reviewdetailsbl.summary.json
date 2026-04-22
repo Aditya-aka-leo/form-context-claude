@@ -1,0 +1,1140 @@
+{
+  "title": "bankConsent",
+  "fieldType": "form",
+  "path": "/content/forms/af/hdfc/loans/assisted/bl/fragments/reviewdetailsbl/jcr:content/root/section/form",
+  "items": {
+    "panelcontainer": {
+      "name": "reviewPanelWrapper",
+      "fieldType": "panel",
+      "label": "<p>reviewPanelWrapper</p>",
+      "events": {
+        "custom:importdata": "reviewPanelData()",
+        "custom:setProperty": "$event.payload"
+      },
+      "rules": {
+        "validationStatus": "valid"
+      },
+      "items": {
+        "panelcontainer_779230161": {
+          "name": "headerPanel",
+          "fieldType": "panel",
+          "label": "<p>headerPanel</p>",
+          "events": {
+            "custom:setProperty": "$event.payload"
+          }
+        },
+        "panelcontainer_1759734060522": {
+          "name": "loanDetailsWrapper",
+          "fieldType": "panel",
+          "label": "<p>loanDetailsWrapper</p>",
+          "events": {
+            "custom:setProperty": "$event.payload"
+          },
+          "items": {
+            "panelcontainer_1074888792": {
+              "name": "loanDetails",
+              "fieldType": "panel",
+              "label": "<p>Loan Details</p>",
+              "events": {
+                "custom:setProperty": "$event.payload"
+              },
+              "items": {
+                "panelcontainer_429604266": {
+                  "name": "loanDetailsMiniWrapper",
+                  "fieldType": "panel",
+                  "label": "<p>loanDetailsMiniWrapper</p>",
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "items": {
+                    "panelcontainer_1760123310073": {
+                      "name": "loanAmountWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Loan Amount</p>",
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123313586": {
+                      "name": "emiAmountWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>EMI Amount</p>",
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123317574": {
+                      "name": "tenureWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Tenure</p>",
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123321060": {
+                      "name": "processingFeeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Processing Fee</p>",
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123323815": {
+                      "name": "roiWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Rate Of Interest</p>",
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123326846": {
+                      "name": "employerNameWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Employer Name</p>",
+                      "visible": false,
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123330612": {
+                      "name": "scheduleOfChargesWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Schedule Of Charges</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      },
+                      "items": {
+                        "button": {
+                          "name": "scheduleOfCharges",
+                          "fieldType": "button",
+                          "type": "string",
+                          "label": "<p>Click Here</p>",
+                          "events": {
+                            "click": "dispatchEvent($form, 'custom:showSOCPopUp')",
+                            "custom:setProperty": "$event.payload"
+                          },
+                          "rules": {
+                            "validationStatus": "valid"
+                          }
+                        }
+                      }
+                    },
+                    "panelcontainer_1760123333290": {
+                      "name": "typeOfLoanWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Type Of Loan</p>",
+                      "visible": false,
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "purposeOfLoanWrapper": {
+                      "name": "purposeOfLoanWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Purpose Of Loan</p>",
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "panelcontainer": {
+          "name": "personalDetailsWrapper",
+          "fieldType": "panel",
+          "label": "<p>personalDetailsWrapper</p>",
+          "events": {
+            "custom:setProperty": "$event.payload"
+          },
+          "items": {
+            "panelcontainer": {
+              "name": "personalDetails",
+              "fieldType": "panel",
+              "label": "<p>Personal Details</p>",
+              "events": {
+                "custom:setProperty": "$event.payload"
+              },
+              "items": {
+                "panelcontainer": {
+                  "name": "personalDetailsMinWrapper",
+                  "fieldType": "panel",
+                  "label": "Panel",
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "items": {
+                    "panelcontainer_1760123392226": {
+                      "name": "pDWrapper1",
+                      "fieldType": "panel",
+                      "label": "<p>personal Wrapper 1</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      },
+                      "items": {
+                        "panelcontainer_1770187675003": {
+                          "name": "fullNameTextWrapper",
+                          "fieldType": "panel",
+                          "label": "<p>Full Name</p>",
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        },
+                        "panelcontainer_1760078327822": {
+                          "name": "mobileNumberWrapper",
+                          "fieldType": "panel",
+                          "label": "<p>Mobile Number</p>",
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        },
+                        "panelcontainer_1760078330788": {
+                          "name": "dateOfBirthWrapper",
+                          "fieldType": "panel",
+                          "label": "<p>Date Of Birth</p>",
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        },
+                        "panelcontainer_1760078333759": {
+                          "name": "PANWrapper",
+                          "fieldType": "panel",
+                          "label": "<p>Pan Card Number</p>",
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        }
+                      }
+                    },
+                    "panel": {
+                      "name": "pdWrapper2",
+                      "fieldType": "panel",
+                      "label": "<p>Personal Details Wrapper 2</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      },
+                      "items": {
+                        "panelcontainer_1771480616310": {
+                          "name": "currentAddressWrapper",
+                          "fieldType": "panel",
+                          "label": "<p>Current Address (Also Mailing Address)</p>",
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        },
+                        "panelcontainer_1771480643129": {
+                          "name": "residenceTypeWrapper",
+                          "fieldType": "panel",
+                          "label": "<p>Residence Type</p>",
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        },
+                        "checkbox": {
+                          "name": "currentAddressCheckbox",
+                          "fieldType": "checkbox",
+                          "type": "string",
+                          "label": "<p><span data-teams=\"true\">I hereby declare the above address as my current address and my mailing/ communication address, and I request you to update the same in bank records</span></p>",
+                          "enum": [
+                            "on"
+                          ],
+                          "required": true,
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        }
+                      }
+                    },
+                    "panelcontainer_1760123395238": {
+                      "name": "pdWrapper3",
+                      "fieldType": "panel",
+                      "label": "<p>Personal Wrapper 2</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      },
+                      "items": {
+                        "panelcontainer_1771480747976": {
+                          "name": "permanetAddressWrapper",
+                          "fieldType": "panel",
+                          "label": "<p>Permanent Address</p>",
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        },
+                        "religionWrapper": {
+                          "name": "religionWrapper",
+                          "fieldType": "panel",
+                          "label": "<p>Religion</p>",
+                          "readOnly": true,
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        },
+                        "categoryWrapper": {
+                          "name": "categoryWrapper",
+                          "fieldType": "panel",
+                          "label": "<p>Category</p>",
+                          "readOnly": true,
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        },
+                        "maritalStatusWrapper": {
+                          "name": "maritalStatusWrapper",
+                          "fieldType": "panel",
+                          "label": "<p>Marital Status</p>",
+                          "readOnly": true,
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "businessDetailsWrapper": {
+          "name": "businessDetailsWrapper",
+          "fieldType": "panel",
+          "label": "<p>businessDetailsWrapper</p>",
+          "readOnly": true,
+          "events": {
+            "custom:setProperty": "$event.payload"
+          },
+          "items": {
+            "panelcontainer": {
+              "name": "businessDetails",
+              "fieldType": "panel",
+              "label": "<p>Business Details</p>",
+              "events": {
+                "custom:setProperty": "$event.payload"
+              },
+              "items": {
+                "businessDetailsMiniWrapper": {
+                  "name": "businessDetailsMiniWrapper",
+                  "fieldType": "panel",
+                  "label": "Panel",
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "items": {
+                    "panel": {
+                      "name": "entityNameWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Entity Name</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "businessNameWrapper": {
+                      "name": "businessNameWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Business Name</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "businessAddressWrapper": {
+                      "name": "businessAddressWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Business Address</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "annualTurnoverWrapper": {
+                      "name": "annualTurnoverWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Approximate Annual Turnover</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "annualturnoverwrappe": {
+                      "name": "buisnessProfileWrapper",
+                      "fieldType": "panel",
+                      "label": "<p><span data-teams=\"true\">Business Profile</span></p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "gstinNumber1Wrapper": {
+                      "name": "gstinNumber1Wrapper",
+                      "fieldType": "panel",
+                      "label": "<p>GSTIN Number 1</p>",
+                      "repeatable": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "gstinnumber1wrapper": {
+                      "name": "mciNameWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Name of MCI</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "gstinnumber1wrapper_1952353429": {
+                      "name": "mciNumberWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>MCI Number</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "gstinnumber1wrapper_": {
+                      "name": "annualIncomeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Annual Income</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "gstinnumber1wrapper__208482192": {
+                      "name": "occupationTypeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Occupation Type</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "gstinnumber1wrapper__1775826692699": {
+                      "name": "mciYORWrapper",
+                      "fieldType": "panel",
+                      "label": "<p><span data-teams=\"true\">Year of Registration of MCI</span></p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "businessdetailswrapp": {
+          "name": "employerDetailsWrapper",
+          "fieldType": "panel",
+          "label": "<p>employerDetailsWrapper</p>",
+          "visible": false,
+          "readOnly": true,
+          "events": {
+            "custom:setProperty": "$event.payload"
+          },
+          "items": {
+            "panelcontainer": {
+              "name": "employerDetails",
+              "fieldType": "panel",
+              "label": "<p>Employer Details</p>",
+              "events": {
+                "custom:setProperty": "$event.payload"
+              },
+              "items": {
+                "businessDetailsMiniWrapper": {
+                  "name": "employerDetailsMiniWrapper",
+                  "fieldType": "panel",
+                  "label": "Panel",
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "items": {
+                    "businessNameWrapper": {
+                      "name": "employerNameWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Employer Name</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "businessAddressWrapper": {
+                      "name": "employerAddressWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Employer Address</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "gstinnumber1wrapper": {
+                      "name": "mciNameWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Name of MCI</p>",
+                      "repeatable": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "gstinnumber1wrapper_1952353429": {
+                      "name": "mciNumberWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>MCI Number</p>",
+                      "repeatable": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "gstinnumber1wrapper_": {
+                      "name": "annualIncomeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Annual Income</p>",
+                      "repeatable": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "gstinnumber1wrapper__1775826402911": {
+                      "name": "occupationTypeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Occupation Type</p>",
+                      "repeatable": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "gstinnumber1wrapper__1887241674": {
+                      "name": "mciYORWrapper",
+                      "fieldType": "panel",
+                      "label": "<p><span data-teams=\"true\">Year of Registration of MCI</span></p>",
+                      "repeatable": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "electricityDetailsWrapper": {
+          "name": "electricityDetailsWrapper",
+          "fieldType": "panel",
+          "label": "<p>electricityDetailsWrapper</p>",
+          "readOnly": true,
+          "events": {
+            "custom:setProperty": "$event.payload"
+          },
+          "items": {
+            "panelcontainer": {
+              "name": "electricityDetails",
+              "fieldType": "panel",
+              "label": "<p>Electricity Details</p>",
+              "events": {
+                "custom:setProperty": "$event.payload"
+              },
+              "items": {
+                "electricityDetailsMiniWrapper": {
+                  "name": "electricityDetailsMiniWrapper",
+                  "fieldType": "panel",
+                  "label": "Panel",
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "items": {
+                    "electricityBoardNameWrapper": {
+                      "name": "electricityBoardNameWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Electricity Board Name</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "uniqueCustomerIdWrapper": {
+                      "name": "uniqueCustomerIdWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Unique Customer ID</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "relationshipWithConnectionHolderWrapper": {
+                      "name": "relationshipWithConnectionHolderWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Relationship with Connection Holder</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "panelcontainer_715564596": {
+          "name": "AccountDetailsWrapper",
+          "fieldType": "panel",
+          "label": "<p>accountDetailsWrapper</p>",
+          "events": {
+            "custom:setProperty": "$event.payload"
+          },
+          "items": {
+            "panelcontainer": {
+              "name": "accountDetails",
+              "fieldType": "panel",
+              "label": "<p>Account Details</p>",
+              "events": {
+                "custom:setProperty": "$event.payload"
+              },
+              "items": {
+                "panelcontainer_1652394238": {
+                  "name": "salaryAccountDetailsMiniWrapper",
+                  "fieldType": "panel",
+                  "label": "<p>salaryAccountDetailsMiniWrapper</p>",
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "items": {
+                    "panelcontainer_1760123438907": {
+                      "name": "accountNumWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Account Number</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "accountTypeWrapper": {
+                      "name": "accountTypeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Account Type</p>",
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123436175": {
+                      "name": "IFSCWrapperPrefill",
+                      "fieldType": "panel",
+                      "label": "<p>IFSC</p>",
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123432615": {
+                      "name": "bankNameWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Bank Name</p>",
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "branchNameWrapper_1771480466388": {
+                      "name": "branchNameWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Branch Name</p>",
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "micrCodeWrapper": {
+                      "name": "micrCodeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>MICR Code</p>",
+                      "readOnly": true,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "panelcontainer_71556_410168737": {
+          "name": "referenceDetailsWrapper",
+          "fieldType": "panel",
+          "label": "<p>referenceDetailsWrapper</p>",
+          "readOnly": true,
+          "events": {
+            "custom:setProperty": "$event.payload"
+          },
+          "items": {
+            "panelcontainer": {
+              "name": "referenceDetails",
+              "fieldType": "panel",
+              "label": "<p>Reference Details</p>",
+              "events": {
+                "custom:setProperty": "$event.payload"
+              },
+              "items": {
+                "panelcontainer_856971481": {
+                  "name": "referenceDetailsMiniWrapper",
+                  "fieldType": "panel",
+                  "label": "Panel",
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "items": {
+                    "panelcontainer_1760123502546": {
+                      "name": "referenceFullNameWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Reference Name</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1761652098679": {
+                      "name": "referenceMobileNumberWrapper",
+                      "fieldType": "panel",
+                      "label": "<p data-pm-slice=\"1 1 []\">Reference Contact</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "panelcontainer_1760121651772": {
+          "name": "BankUseSectionWrapper",
+          "fieldType": "panel",
+          "label": "<p>BankUseSectionWrapper</p>",
+          "events": {
+            "custom:setProperty": "$event.payload"
+          },
+          "items": {
+            "panelcontainer": {
+              "name": "BankUseSection",
+              "fieldType": "panel",
+              "label": "<p>Bank Use Section</p>",
+              "readOnly": true,
+              "events": {
+                "custom:setProperty": "$event.payload"
+              },
+              "items": {
+                "panelcontainer_352438679": {
+                  "name": "BankUseSectionMiniWrapper",
+                  "fieldType": "panel",
+                  "label": "Panel",
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "items": {
+                    "panelcontainer_1760123539795": {
+                      "name": "channelWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Channel</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123542895": {
+                      "name": "branchCodeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Branch Code</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123545966": {
+                      "name": "SMCodeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>SM Code</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123550638": {
+                      "name": "SECodeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>SE Code</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123553692": {
+                      "name": "LGCodeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>LG Code</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123558819": {
+                      "name": "LCCodeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>LC Code</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123565509": {
+                      "name": "TSECodeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>TSE Code</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123572611": {
+                      "name": "CRMCodeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>CRM Number</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_1760123575303": {
+                      "name": "salesPromoCodeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Sales Promo Code</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    },
+                    "panelcontainer_17601": {
+                      "name": "DSACodeWrapper",
+                      "fieldType": "panel",
+                      "label": "<p><label class=\"field-label\" for=\"dropdown-60f26dbda7\">Agent/DSA Code</label></p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "panelcontainer_1760121541018": {
+          "name": "verifyEmailMainWrapper",
+          "fieldType": "panel",
+          "label": "<p>Verify Email ID</p>",
+          "events": {
+            "custom:setProperty": "$event.payload"
+          },
+          "items": {
+            "panelcontainer_1760121474017": {
+              "name": "verifyEmailWrapper",
+              "fieldType": "panel",
+              "label": "<p>Verify Email ID</p>",
+              "events": {
+                "custom:setProperty": "$event.payload"
+              },
+              "items": {
+                "panelcontainer": {
+                  "name": "verifyEmail",
+                  "fieldType": "panel",
+                  "label": "<p>Verify Email ID</p>",
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "items": {
+                    "panelcontainer": {
+                      "name": "personalEmailWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Personal Email ID</p>",
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      },
+                      "items": {
+                        "textinput_1770888269372": {
+                          "name": "personalEmail",
+                          "dataRef": "$.customerPersonalEmailId",
+                          "fieldType": "email",
+                          "type": "string",
+                          "label": "<p>Personal Email ID</p>",
+                          "required": true,
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        },
+                        "button": {
+                          "name": "verifyPersonalEmailButton",
+                          "fieldType": "button",
+                          "type": "string",
+                          "label": "<p>Verify</p>",
+                          "events": {
+                            "custom:wsdlSuccess_720548_1772090800578": [
+                              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.otpModal, 'custom:personalEmailVerify'), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($field, 'custom:personalEmailOtpGenSuccess'), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', setVariable('time', 30, $form.otpModal.resendOtpTimer), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', setVariable('retries', getVariable('retries', $field), $form.otpModal.resendOtpTimer), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', setVariable('emailType', 'P', $form.otpModal), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent(verifyAgainText, 'custom:setProperty', {visible : false()}), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '1' && toObject($event.payload.body).status.errorCode == 'LN11111', dispatchEvent($form, 'custom:otpEmailValidationFatalError'), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '1' && toObject($event.payload.body).status.errorCode != 'LN11111', dispatchEvent(verifyAgainText, 'custom:setProperty', {visible : true()}), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '1', dispatchEvent($field, 'custom:personalEmailOtpGenFailure'), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.otpModal.otpMessage, 'custom:setProperty', {value : maskEmailReviewDetails(personalEmail.$value)}), {})"
+                            ],
+                            "custom:wsdlSuccess_311939_1772090800579": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_311939_1772090800579', 'custom:decryptError_311939_1772090800579')",
+                            "initialize": [
+                              "setVariable('retries', 4, $field)",
+                              "setVariable('attemptsLeft', 3, $field)"
+                            ],
+                            "click": "if((true() && validate($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.personalEmail).length==0), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpGen.json'), 'POST', {\"requestData\": {\"otpGenRequest\": {\"type\": 'email',\"mobileNo\": getVariable('mob'),\"typeOfEmail\": 'P',\"email\": personalEmail.$value}},\"requestContext\": {\"mobileNo\": getVariable('mob'),\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"partnerJourneyID\": getVariable('pjid'),\"bankJourneyID\": getVariable('bjid'),\"productName\": 'BL'}}, {\"Content-Type\": 'application/json'}, 'custom:wsdlSuccess_720548_1772090800578','custom:wsdlError_720548_1772090800578'))), {})",
+                            "custom:setProperty": "$event.payload",
+                            "custom:personalEmailOtpGenSuccess": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicationStatusInfo\": applicationStatusInfoArray('PERSONAL EMAIL OTP GENERATED','CUSTOMER',today(),'FORM')}}, headers: {\"Content-Type\": 'application/json'}}, 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoAatblmEzZTQOT732FU38hiT9vCvGK12+pUD3yENyHXjk7oN1uWPlpItm5OAcsPZt52WznDkpOb/AxLBeJKFYZPvOk75lo6ZAA1qyJEOekQru5XQUtpMzsC9w96T2zTYQQ4HUwMNXmYkWIVo4Ek/KCfX2yklRHxwm3Pqj93vJkUmoddLctXArddtm75HUjtYzf5jecQCGk//pyjTDJEswMpg3oXNiI2F1PnDUiKdQBE7+a1s5KB7CAKKYQLFNN48kjiOdDutMByjZxW0elPs9ETVU+NVNQ6ru9vKQYzvR/2YD7NNSHPUCpdexIpfiYeWrxUNgpHLM2qfXTOvn6UztQIDAQAB'), 'custom:wsdlSuccess_444604_1772090800579','custom:wsdlError_444604_1772090800579')))",
+                            "custom:personalEmailOtpGenFailure": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicationStatusInfo\": applicationStatusInfoArray('PERSONAL EMAIL OTP FAILED','CUSTOMER',today(),'FORM')}}, headers: {\"Content-Type\": 'application/json'}}, 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoAatblmEzZTQOT732FU38hiT9vCvGK12+pUD3yENyHXjk7oN1uWPlpItm5OAcsPZt52WznDkpOb/AxLBeJKFYZPvOk75lo6ZAA1qyJEOekQru5XQUtpMzsC9w96T2zTYQQ4HUwMNXmYkWIVo4Ek/KCfX2yklRHxwm3Pqj93vJkUmoddLctXArddtm75HUjtYzf5jecQCGk//pyjTDJEswMpg3oXNiI2F1PnDUiKdQBE7+a1s5KB7CAKKYQLFNN48kjiOdDutMByjZxW0elPs9ETVU+NVNQ6ru9vKQYzvR/2YD7NNSHPUCpdexIpfiYeWrxUNgpHLM2qfXTOvn6UztQIDAQAB'), 'custom:wsdlSuccess_311939_1772090800579','custom:wsdlError_311939_1772090800579')))",
+                            "custom:wsdlSuccess_444604_1772090800579": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_444604_1772090800579', 'custom:decryptError_444604_1772090800579')",
+                            "custom:wsdlError_720548_1772090800578": [
+                              "dispatchEvent(verifyAgainText, 'custom:setProperty', {visible : true()})",
+                              "dispatchEvent($field, 'custom:personalEmailOtpGenFailure')"
+                            ]
+                          },
+                          "rules": {
+                            "validationStatus": "valid"
+                          }
+                        }
+                      }
+                    },
+                    "panelcontainer_1313465813": {
+                      "name": "workEmailWrapper",
+                      "fieldType": "panel",
+                      "label": "<p>Work Email ID</p>",
+                      "visible": false,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      },
+                      "items": {
+                        "textinput_1770893737160": {
+                          "name": "workEmail",
+                          "dataRef": "$.customerWorkEmailId",
+                          "fieldType": "email",
+                          "type": "string",
+                          "label": "<p>Work Email ID</p>",
+                          "required": true,
+                          "events": {
+                            "custom:setProperty": "$event.payload"
+                          }
+                        },
+                        "button": {
+                          "name": "verifyWorkEmailButton",
+                          "fieldType": "button",
+                          "type": "string",
+                          "label": "<p>Verify</p>",
+                          "events": {
+                            "custom:wsdlSuccess_147367_1772091323290": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_147367_1772091323290', 'custom:decryptError_147367_1772091323290')",
+                            "custom:wsdlSuccess_759120_1772091323289": [
+                              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.otpModal, 'custom:workEmailVerify'), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($field, 'custom:workEmailOtpGenSuccess'), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', setVariable('time', 30, $form.otpModal.resendOtpTimer), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', setVariable('retries', getVariable('retries', $field), $form.otpModal.resendOtpTimer), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', setVariable('emailType', 'W', $form.otpModal), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent(verifyAgainTextWork, 'custom:setProperty', {visible : false()}), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '1' && toObject($event.payload.body).status.errorCode == 'LN11111', dispatchEvent($form, 'custom:otpEmailValidationFatalError'), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '1' && toObject($event.payload.body).status.errorCode != 'LN11111', dispatchEvent(verifyAgainTextWork, 'custom:setProperty', {visible : true()}), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '1', dispatchEvent($field, 'custom:workEmailOtpGenFailure'), {})",
+                              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.otpModal.otpMessageWork, 'custom:setProperty', {value : maskEmailReviewDetails(workEmail.$value)}), {})"
+                            ],
+                            "custom:wsdlSuccess_932188_1772091323289": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_932188_1772091323289', 'custom:decryptError_932188_1772091323289')",
+                            "custom:wsdlError_759120_1772091323289": [
+                              "dispatchEvent(verifyAgainTextWork, 'custom:setProperty', {visible : true()})",
+                              "dispatchEvent($field, 'custom:workEmailOtpGenFailure')"
+                            ],
+                            "initialize": [
+                              "setVariable('retries', 4, $field)",
+                              "setVariable('attemptsLeft', 3, $field)"
+                            ],
+                            "custom:workEmailOtpGenFailure": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicationStatusInfo\": applicationStatusInfoArray('WORK EMAIL OTP FAILED','CUSTOMER',today(),'FORM')}}, headers: {\"Content-Type\": 'application/json'}}, 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoAatblmEzZTQOT732FU38hiT9vCvGK12+pUD3yENyHXjk7oN1uWPlpItm5OAcsPZt52WznDkpOb/AxLBeJKFYZPvOk75lo6ZAA1qyJEOekQru5XQUtpMzsC9w96T2zTYQQ4HUwMNXmYkWIVo4Ek/KCfX2yklRHxwm3Pqj93vJkUmoddLctXArddtm75HUjtYzf5jecQCGk//pyjTDJEswMpg3oXNiI2F1PnDUiKdQBE7+a1s5KB7CAKKYQLFNN48kjiOdDutMByjZxW0elPs9ETVU+NVNQ6ru9vKQYzvR/2YD7NNSHPUCpdexIpfiYeWrxUNgpHLM2qfXTOvn6UztQIDAQAB'), 'custom:wsdlSuccess_932188_1772091323289','custom:wsdlError_932188_1772091323289')))",
+                            "click": "if((true() && validate($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.workEmail).length==0), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpGen.json'), 'POST', {\"requestData\": {\"otpGenRequest\": {\"type\": 'email',\"mobileNo\": getVariable('mob'),\"typeOfEmail\": 'W',\"email\": workEmail.$value}},\"requestContext\": {\"mobileNo\": getVariable('mob'),\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"partnerJourneyID\": getVariable('pjid'),\"bankJourneyID\": getVariable('bjid'),\"productName\": 'BL'}}, {\"Content-Type\": 'application/json'}, 'custom:wsdlSuccess_759120_1772091323289','custom:wsdlError_759120_1772091323289'))), {})",
+                            "custom:setProperty": "$event.payload",
+                            "custom:workEmailOtpGenSuccess": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicationStatusInfo\": applicationStatusInfoArray('WORK EMAIL OTP GENERATED','CUSTOMER',today(),'FORM')}}, headers: {\"Content-Type\": 'application/json'}}, 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoAatblmEzZTQOT732FU38hiT9vCvGK12+pUD3yENyHXjk7oN1uWPlpItm5OAcsPZt52WznDkpOb/AxLBeJKFYZPvOk75lo6ZAA1qyJEOekQru5XQUtpMzsC9w96T2zTYQQ4HUwMNXmYkWIVo4Ek/KCfX2yklRHxwm3Pqj93vJkUmoddLctXArddtm75HUjtYzf5jecQCGk//pyjTDJEswMpg3oXNiI2F1PnDUiKdQBE7+a1s5KB7CAKKYQLFNN48kjiOdDutMByjZxW0elPs9ETVU+NVNQ6ru9vKQYzvR/2YD7NNSHPUCpdexIpfiYeWrxUNgpHLM2qfXTOvn6UztQIDAQAB'), 'custom:wsdlSuccess_147367_1772091323290','custom:wsdlError_147367_1772091323290')))"
+                          },
+                          "rules": {
+                            "validationStatus": "valid"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "form_modal_2042383633": {
+      "name": "otpModal",
+      "fieldType": "panel",
+      "label": "<p>OTP Modal</p>",
+      "visible": false,
+      "events": {
+        "custom:wsdlSuccess_774077_1776360556028": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_774077_1776360556028', 'custom:decryptError_774077_1776360556028')",
+        "custom:personalEmailAttemptExhausted": [
+          "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicationStatusInfo\": applicationStatusInfoArray('PERSONAL EMAIL ATTEMPTS EXHAUSTED','CUSTOMER',today(),'FORM')}}, headers: {\"Content-Type\": 'application/json'}}, 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoAatblmEzZTQOT732FU38hiT9vCvGK12+pUD3yENyHXjk7oN1uWPlpItm5OAcsPZt52WznDkpOb/AxLBeJKFYZPvOk75lo6ZAA1qyJEOekQru5XQUtpMzsC9w96T2zTYQQ4HUwMNXmYkWIVo4Ek/KCfX2yklRHxwm3Pqj93vJkUmoddLctXArddtm75HUjtYzf5jecQCGk//pyjTDJEswMpg3oXNiI2F1PnDUiKdQBE7+a1s5KB7CAKKYQLFNN48kjiOdDutMByjZxW0elPs9ETVU+NVNQ6ru9vKQYzvR/2YD7NNSHPUCpdexIpfiYeWrxUNgpHLM2qfXTOvn6UztQIDAQAB'), 'custom:wsdlSuccess_565367_1776360556029','custom:wsdlError_565367_1776360556029')))",
+          "dispatchEvent($form, 'custom:emailOtpAttemptsExhausted')"
+        ],
+        "custom:workEmailVerified": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicationStatusInfo\": applicationStatusInfoArray('WORK EMAIL VERIFIED','CUSTOMER',today(),'FORM')}}, headers: {\"Content-Type\": 'application/json'}}, 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoAatblmEzZTQOT732FU38hiT9vCvGK12+pUD3yENyHXjk7oN1uWPlpItm5OAcsPZt52WznDkpOb/AxLBeJKFYZPvOk75lo6ZAA1qyJEOekQru5XQUtpMzsC9w96T2zTYQQ4HUwMNXmYkWIVo4Ek/KCfX2yklRHxwm3Pqj93vJkUmoddLctXArddtm75HUjtYzf5jecQCGk//pyjTDJEswMpg3oXNiI2F1PnDUiKdQBE7+a1s5KB7CAKKYQLFNN48kjiOdDutMByjZxW0elPs9ETVU+NVNQ6ru9vKQYzvR/2YD7NNSHPUCpdexIpfiYeWrxUNgpHLM2qfXTOvn6UztQIDAQAB'), 'custom:wsdlSuccess_557193_1776360556028','custom:wsdlError_557193_1776360556028')))",
+        "custom:workEmailVerify": [
+          "{visible : true()}",
+          "dispatchEvent($field, 'custom:resendOtpTimer')",
+          "dispatchEvent(resendOtpTimer, 'custom:resetOtpCounter')",
+          "dispatchEvent(otpInput, 'reset')",
+          "dispatchEvent(otpHeadingWork, 'custom:setProperty', {visible : true()})",
+          "dispatchEvent(otpMessageWork, 'custom:setProperty', {visible : true()})",
+          "dispatchEvent(otpHeading, 'custom:setProperty', {visible : false()})",
+          "dispatchEvent(otpMessage, 'custom:setProperty', {visible : false()})",
+          "dispatchEvent(resendOtpTimer, 'custom:setProperty', {visible : true()})",
+          "dispatchEvent(otpHeadingPersonal, 'custom:setProperty', {visible : false()})",
+          "dispatchEvent(otpAttemptsLeft, 'custom:setProperty', {value : 3})",
+          "dispatchEvent(verifyAgainTextOtpModal, 'custom:setProperty', {value : '3 / 3 attempt(s) left.'})"
+        ],
+        "custom:personalEmailVerify": [
+          "dispatchEvent(otpInput, 'reset')",
+          "dispatchEvent(resendOtpTimer, 'custom:resetOtpCounter')",
+          "dispatchEvent(otpInput, 'reset')",
+          "{visible : true()}",
+          "dispatchEvent(otpHeading, 'custom:setProperty', {visible : true()})",
+          "dispatchEvent(otpMessage, 'custom:setProperty', {visible : true()})",
+          "dispatchEvent(otpHeadingWork, 'custom:setProperty', {visible : false()})",
+          "dispatchEvent(otpMessageWork, 'custom:setProperty', {visible : false()})",
+          "dispatchEvent(resendOtpTimer, 'custom:setProperty', {visible : true()})",
+          "dispatchEvent(otpHeadingPersonal, 'custom:setProperty', {visible : true()})",
+          "dispatchEvent(otpAttemptsLeft, 'custom:setProperty', {value : 3})",
+          "dispatchEvent(verifyAgainTextOtpModal, 'custom:setProperty', {value : '3 / 3 attempt(s) left.'})"
+        ],
+        "custom:workEmailAttemptExhausted": [
+          "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicationStatusInfo\": applicationStatusInfoArray('WORK EMAIL ATTEMPTS EXHAUSTED','CUSTOMER',today(),'FORM')}}, headers: {\"Content-Type\": 'application/json'}}, 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoAatblmEzZTQOT732FU38hiT9vCvGK12+pUD3yENyHXjk7oN1uWPlpItm5OAcsPZt52WznDkpOb/AxLBeJKFYZPvOk75lo6ZAA1qyJEOekQru5XQUtpMzsC9w96T2zTYQQ4HUwMNXmYkWIVo4Ek/KCfX2yklRHxwm3Pqj93vJkUmoddLctXArddtm75HUjtYzf5jecQCGk//pyjTDJEswMpg3oXNiI2F1PnDUiKdQBE7+a1s5KB7CAKKYQLFNN48kjiOdDutMByjZxW0elPs9ETVU+NVNQ6ru9vKQYzvR/2YD7NNSHPUCpdexIpfiYeWrxUNgpHLM2qfXTOvn6UztQIDAQAB'), 'custom:wsdlSuccess_774077_1776360556028','custom:wsdlError_774077_1776360556028')))",
+          "dispatchEvent($form, 'custom:emailOtpAttemptsExhausted')"
+        ],
+        "custom:wsdlSuccess_557193_1776360556028": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_557193_1776360556028', 'custom:decryptError_557193_1776360556028')",
+        "custom:personalEmailVerified": [
+          "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicationStatusInfo\": applicationStatusInfoArray('PERSONAL EMAIL VERIFIED','CUSTOMER',today(),'FORM')}}, headers: {\"Content-Type\": 'application/json'}}, 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoAatblmEzZTQOT732FU38hiT9vCvGK12+pUD3yENyHXjk7oN1uWPlpItm5OAcsPZt52WznDkpOb/AxLBeJKFYZPvOk75lo6ZAA1qyJEOekQru5XQUtpMzsC9w96T2zTYQQ4HUwMNXmYkWIVo4Ek/KCfX2yklRHxwm3Pqj93vJkUmoddLctXArddtm75HUjtYzf5jecQCGk//pyjTDJEswMpg3oXNiI2F1PnDUiKdQBE7+a1s5KB7CAKKYQLFNN48kjiOdDutMByjZxW0elPs9ETVU+NVNQ6ru9vKQYzvR/2YD7NNSHPUCpdexIpfiYeWrxUNgpHLM2qfXTOvn6UztQIDAQAB'), 'custom:wsdlSuccess_040005_1776360556028','custom:wsdlError_040005_1776360556028')))",
+          "dispatchEvent($form, 'custom:personalEmailVerified')"
+        ],
+        "custom:wsdlSuccess_040005_1776360556028": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_040005_1776360556028', 'custom:decryptError_040005_1776360556028')",
+        "custom:wsdlSuccess_565367_1776360556029": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_565367_1776360556029', 'custom:decryptError_565367_1776360556029')",
+        "custom:setProperty": "$event.payload"
+      },
+      "rules": {
+        "validationStatus": "valid"
+      },
+      "items": {
+        "state_button_1772180819701": {
+          "name": "editEmailButton",
+          "fieldType": "button",
+          "type": "string",
+          "label": "<p>Edit email id</p>",
+          "events": {
+            "custom:setProperty": "$event.payload",
+            "click": "dispatchEvent($form.otpModal, 'custom:setProperty', {visible : false()})"
+          },
+          "rules": {
+            "validationStatus": "valid"
+          }
+        },
+        "otpInput_1770360037218": {
+          "name": "otpInput",
+          "fieldType": "text-input",
+          "type": "string",
+          "label": "OTP Input",
+          "required": true,
+          "maxLength": 6,
+          "minLength": 6,
+          "events": {
+            "custom:setProperty": "$event.payload"
+          }
+        },
+        "resendOtpTimer_1770360039999": {
+          "name": "resendOtpTimer",
+          "fieldType": "button",
+          "type": "string",
+          "label": "Resend OTP Timer",
+          "enabled": false,
+          "events": {
+            "custom:wsdlError_962162_1771910656619": [
+              "dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyAgainText, 'custom:setProperty', {visible : true()})",
+              "dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPersonalEmailButton, 'custom:personalEmailOtpGenFailure')"
+            ],
+            "custom:wsdlSuccess_182366_1771910656619": [
+              "if(toObject($event.payload.body).status.responseCode == '0', setVariable('retries', (getVariable('retries', $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyWorkEmailButton) - 1), $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyWorkEmailButton), {})",
+              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($field, 'custom:resetOtpCounter'), {})",
+              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyAgainTextWork, 'custom:setProperty', {visible : false()}), {})",
+              "if(toObject($event.payload.body).status.responseCode == '1' && toObject($event.payload.body).status.errorCode == 'LN11111', dispatchEvent($form, 'custom:otpEmailValidationFatalError'), {})",
+              "if(toObject($event.payload.body).status.responseCode == '1' && toObject($event.payload.body).status.errorCode != 'LN11111', dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyAgainTextWork, 'custom:setProperty', {visible : true()}), {})",
+              "if(toObject($event.payload.body).status.responseCode == '1', dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyWorkEmailButton, 'custom:workEmailOtpGenFailure'), {})"
+            ],
+            "custom:retriesExhausted": "{visible : false()}",
+            "custom:wsdlError_182366_1771910656619": [
+              "dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyAgainTextWork, 'custom:setProperty', {visible : true()})",
+              "dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyWorkEmailButton, 'custom:workEmailOtpGenFailure')"
+            ],
+            "custom:wsdlSuccess_962162_1771910656619": [
+              "if(toObject($event.payload.body).status.responseCode == '0', setVariable('retries', (getVariable('retries', $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPersonalEmailButton) - 1), $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPersonalEmailButton), {})",
+              "if(toObject($event.payload.body).status.responseCode == '0', setVariable('emailType', 'P', $form.otpModal), {})",
+              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($field, 'custom:resetOtpCounter'), {})",
+              "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyAgainText, 'custom:setProperty', {visible : false()}), {})",
+              "if(toObject($event.payload.body).status.responseCode == '1' && toObject($event.payload.body).status.errorCode == 'LN11111', dispatchEvent($form, 'custom:otpEmailValidationFatalError'), {})",
+              "if(toObject($event.payload.body).status.responseCode == '1' && toObject($event.payload.body).status.errorCode != 'LN11111', dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyAgainText, 'custom:setProperty', {visible : true()}), {})",
+              "if(toObject($event.payload.body).status.responseCode == '1', dispatchEvent($form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPersonalEmailButton, 'custom:personalEmailOtpGenFailure'), {})"
+            ],
+            "click": [
+              "if((true() && getVariable('emailType', $form.otpModal) == 'W'), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpGen.json'), 'POST', {\"requestData\": {\"otpGenRequest\": {\"type\": 'email',\"mobileNo\": getVariable('mob'),\"typeOfEmail\": 'W',\"email\": $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.workEmail.$value}},\"requestContext\": {\"mobileNo\": getVariable('mob'),\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"partnerJourneyID\": getVariable('pjid'),\"bankJourneyID\": getVariable('bjid'),\"productName\": 'BL'}}, {\"Content-Type\": 'application/json'}, 'custom:wsdlSuccess_182366_1771910656619','custom:wsdlError_182366_1771910656619'))), {})",
+              "if((true() && getVariable('emailType', $form.otpModal) == 'P'), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpGen.json'), 'POST', {\"requestData\": {\"otpGenRequest\": {\"type\": 'email',\"mobileNo\": getVariable('mob'),\"typeOfEmail\": 'P',\"email\": $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.personalEmail.$value}},\"requestContext\": {\"mobileNo\": getVariable('mob'),\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"partnerJourneyID\": getVariable('pjid'),\"bankJourneyID\": getVariable('bjid'),\"productName\": 'BL'}}, {\"Content-Type\": 'application/json'}, 'custom:wsdlSuccess_962162_1771910656619','custom:wsdlError_962162_1771910656619'))), {})"
+            ],
+            "custom:setProperty": "$event.payload"
+          },
+          "rules": {
+            "validationStatus": "valid"
+          }
+        },
+        "number_input": {
+          "name": "otpAttemptsLeft",
+          "fieldType": "number-input",
+          "type": "number",
+          "label": "Number Input",
+          "visible": false,
+          "default": 3,
+          "events": {
+            "custom:setProperty": "$event.payload"
+          }
+        },
+        "panel": {
+          "name": "modalButtonWrapper",
+          "fieldType": "panel",
+          "label": "Panel",
+          "events": {
+            "custom:setProperty": "$event.payload"
+          },
+          "items": {
+            "state_button_1771488157116": {
+              "name": "otpverifybutton",
+              "fieldType": "button",
+              "type": "string",
+              "label": "<p>Submit</p>",
+              "events": {
+                "custom:decryptSuccess_388009_1772087204922": "handleEmailOtpSuccess(getVariable('emailType', $form.otpModal),$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyWorkEmailButton,$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.workEmailHelperText,$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.workEmailVerifiedText,$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.workEmail)",
+                "custom:wsdlError_388009_1772087204922": "dispatchEvent($form.otpModal.verifyAgainTextOtpModal, 'custom:setProperty', {visible : true()})",
+                "custom:wsdlSuccess_324931_1772087204922": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_324931_1772087204922', 'custom:decryptError_324931_1772087204922')",
+                "custom:wsdlSuccess_388009_1772087204922": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_388009_1772087204922', 'custom:decryptError_388009_1772087204922')",
+                "custom:decryptSuccess_324931_1772087204922": "handleEmailOtpSuccess(getVariable('emailType', $form.otpModal),$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPersonalEmailButton,$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.personalEmailHelperText,$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.personalEmailVerified,$form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.personalEmail)",
+                "click": [
+                  "if((true() && (validate($form.otpModal.otpInput).length==0 && (getVariable('emailType', $form.otpModal) == 'P' && getVariable('attemptsLeft', $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPersonalEmailButton) > 0))), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpVal.json'), 'POST', encrypt({body: {\"requestData\": {\"otpValRequest\": {\"passwordValue\": $form.otpModal.otpInput.$value,\"typeOfEmail\": getVariable('emailType', $form.otpModal)}},\"requestContext\": {\"mobileNo\": getVariable('mob'),\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"partnerJourneyID\": getVariable('pjid'),\"bankJourneyID\": getVariable('bjid'),\"productName\": 'BL'}}, headers: {\"Content-Type\": 'application/json'}}, 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoAatblmEzZTQOT732FU38hiT9vCvGK12+pUD3yENyHXjk7oN1uWPlpItm5OAcsPZt52WznDkpOb/AxLBeJKFYZPvOk75lo6ZAA1qyJEOekQru5XQUtpMzsC9w96T2zTYQQ4HUwMNXmYkWIVo4Ek/KCfX2yklRHxwm3Pqj93vJkUmoddLctXArddtm75HUjtYzf5jecQCGk//pyjTDJEswMpg3oXNiI2F1PnDUiKdQBE7+a1s5KB7CAKKYQLFNN48kjiOdDutMByjZxW0elPs9ETVU+NVNQ6ru9vKQYzvR/2YD7NNSHPUCpdexIpfiYeWrxUNgpHLM2qfXTOvn6UztQIDAQAB'), 'custom:wsdlSuccess_324931_1772087204922','custom:wsdlError_324931_1772087204922'))), {})",
+                  "if((true() && (validate($form.otpModal.otpInput).length==0 && (getVariable('emailType', $form.otpModal) == 'P' && getVariable('attemptsLeft', $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPersonalEmailButton) > 0))), dispatchEvent($form.otpModal.otpInput, 'reset'), {})",
+                  "if((true() && (validate($form.otpModal.otpInput).length==0 && (getVariable('emailType', $form.otpModal) == 'W' && getVariable('attemptsLeft', $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyWorkEmailButton) > 0))), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpVal.json'), 'POST', encrypt({body: {\"requestData\": {\"otpValRequest\": {\"passwordValue\": $form.otpModal.otpInput.$value,\"typeOfEmail\": getVariable('emailType', $form.otpModal)}},\"requestContext\": {\"mobileNo\": getVariable('mob'),\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"partnerJourneyID\": getVariable('pjid'),\"bankJourneyID\": getVariable('bjid'),\"productName\": 'BL'}}, headers: {\"Content-Type\": 'application/json'}}, 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoAatblmEzZTQOT732FU38hiT9vCvGK12+pUD3yENyHXjk7oN1uWPlpItm5OAcsPZt52WznDkpOb/AxLBeJKFYZPvOk75lo6ZAA1qyJEOekQru5XQUtpMzsC9w96T2zTYQQ4HUwMNXmYkWIVo4Ek/KCfX2yklRHxwm3Pqj93vJkUmoddLctXArddtm75HUjtYzf5jecQCGk//pyjTDJEswMpg3oXNiI2F1PnDUiKdQBE7+a1s5KB7CAKKYQLFNN48kjiOdDutMByjZxW0elPs9ETVU+NVNQ6ru9vKQYzvR/2YD7NNSHPUCpdexIpfiYeWrxUNgpHLM2qfXTOvn6UztQIDAQAB'), 'custom:wsdlSuccess_388009_1772087204922','custom:wsdlError_388009_1772087204922'))), {})",
+                  "if((true() && (validate($form.otpModal.otpInput).length==0 && (getVariable('emailType', $form.otpModal) == 'W' && getVariable('attemptsLeft', $form.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyWorkEmailButton) > 0))), dispatchEvent($form.otpModal.otpInput, 'reset'), {})"
+                ],
+                "custom:setProperty": "$event.payload",
+                "custom:wsdlError_324931_1772087204922": "dispatchEvent($form.otpModal.verifyAgainTextOtpModal, 'custom:setProperty', {visible : true()})"
+              },
+              "rules": {
+                "validationStatus": "valid"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

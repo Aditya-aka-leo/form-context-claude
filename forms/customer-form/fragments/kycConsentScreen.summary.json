@@ -1,0 +1,183 @@
+{
+  "title": "kycConsentScreen",
+  "fieldType": "form",
+  "path": "/content/forms/af/hdfc/loans/assisted/bl/fragments/kycConsentScreen/jcr:content/root/section/form",
+  "items": {
+    "panelcontainer": {
+      "name": "kycConsentSection",
+      "fieldType": "panel",
+      "label": "<p>kycConsentSection</p>",
+      "events": {
+        "custom:setProperty": "$event.payload"
+      },
+      "items": {
+        "panelcontainer": {
+          "name": "kycIdentificationPanel",
+          "fieldType": "panel",
+          "label": "<p>kycIdentificationPanel</p>",
+          "events": {
+            "custom:setProperty": "$event.payload"
+          },
+          "items": {
+            "panelcontainer": {
+              "name": "centralKYCIdentificationPanel",
+              "fieldType": "panel",
+              "label": "<p>centralKYCIdentificationPanel</p>",
+              "visible": false,
+              "events": {
+                "custom:setProperty": "$event.payload"
+              },
+              "items": {
+                "panelcontainer": {
+                  "name": "ckycRadioPanel",
+                  "fieldType": "panel",
+                  "label": "<p>ckycRadioPanel</p>",
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "items": {
+                    "radiobutton_1755151085953": {
+                      "name": "ckycChoice",
+                      "fieldType": "radio-group",
+                      "type": "string",
+                      "label": "<p>ckycChoice</p>",
+                      "enum": [
+                        "CKYC"
+                      ],
+                      "enumNames": [
+                        "Central KYC (cKYC)"
+                      ],
+                      "required": false,
+                      "events": {
+                        "custom:setProperty": "$event.payload"
+                      },
+                      "rules": {
+                        "validationStatus": "valid"
+                      }
+                    }
+                  }
+                },
+                "textinput_1762162553867": {
+                  "name": "ckycPANNumber",
+                  "fieldType": "text-input",
+                  "type": "string",
+                  "label": "<p>Customer PAN</p>",
+                  "required": true,
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "rules": {
+                    "validationStatus": "valid"
+                  }
+                }
+              }
+            },
+            "panelcontainer_124677872": {
+              "name": "aadhaarIdentificationPanel",
+              "fieldType": "panel",
+              "label": "<p>aadhaarIdentificationPanel</p>",
+              "events": {
+                "custom:setProperty": "$event.payload"
+              },
+              "items": {
+                "panelcontainer": {
+                  "name": "aadhaarRadioPanel",
+                  "fieldType": "panel",
+                  "label": "<p>aadhaarRadioPanel</p>",
+                  "events": {
+                    "custom:setProperty": "$event.payload"
+                  },
+                  "items": {
+                    "radiobutton_1755151664496": {
+                      "name": "aadhaarChoice",
+                      "dataRef": "$.aadhaarChoice",
+                      "fieldType": "radio-group",
+                      "type": "string",
+                      "label": "<p>aadhaarChoice</p>",
+                      "default": "EKYC",
+                      "enum": [
+                        "EKYC"
+                      ],
+                      "enumNames": [
+                        "Aadhaar KYC"
+                      ],
+                      "required": false,
+                      "events": {
+                        "change": [
+                          "if(contains($event.payload.changes[].propertyName, 'value'), if($field.$value == 'EKYC', dispatchEvent($form.kycConsentSection.kycIdentificationPanel.centralKYCIdentificationPanel.ckycRadioPanel.ckycChoice, 'custom:setProperty', {value : `null`}), {}), {})",
+                          "if(contains($event.payload.changes[].propertyName, 'value'), if($field.$value == 'EKYC', dispatchEvent($form.hiddenKYCPreferredMode, 'custom:setProperty', {value : 'EKYC'}), {}), {})",
+                          "if(contains($event.payload.changes[].propertyName, 'value'), if($field.$value == 'EKYC', dispatchEvent($form.kycConsentSection.kycIdentificationPanel.centralKYCIdentificationPanel.ckycPANNumber, 'custom:setProperty', {visible : false(), required : false()}), {}), {})"
+                        ],
+                        "custom:setProperty": "$event.payload"
+                      },
+                      "rules": {
+                        "validationStatus": "valid"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "checkbox_1760789973259": {
+          "name": "vkycCheck",
+          "fieldType": "checkbox",
+          "type": "string",
+          "label": "<p>I hereby give my consent to complete my KYC through VCIP Process as prescribed by RBI and agree to abide by the Terms and Conditions laid down by the bank.</p>",
+          "enum": [
+            "on"
+          ],
+          "required": false,
+          "events": {
+            "change": [
+              "if(contains($event.payload.changes[].propertyName, 'value'), if($field.$value == 'on', dispatchEvent($form.hiddenVkycConsentFlag, 'custom:setProperty', {value : 'Yes'}), {}), {})",
+              "if(contains($event.payload.changes[].propertyName, 'value'), if($field.$value == 'on', dispatchEvent($form.hiddenVkycConsentDate, 'custom:setProperty', {value : assetsAssistedKYCDateFormat()}), {}), {})",
+              "if(contains($event.payload.changes[].propertyName, 'value'), if(!($field.$value == 'on'), dispatchEvent($form.hiddenVkycConsentFlag, 'custom:setProperty', {value : 'S'}), {}), {})",
+              "if(contains($event.payload.changes[].propertyName, 'value'), if(!($field.$value == 'on'), dispatchEvent($form.hiddenVkycConsentDate, 'custom:setProperty', {value : `null`}), {}), {})"
+            ],
+            "custom:setProperty": "$event.payload"
+          },
+          "rules": {
+            "validationStatus": "valid"
+          }
+        }
+      }
+    },
+    "textinput": {
+      "name": "hiddenKYCPreferredMode",
+      "dataRef": "$.ekycPreferredMode",
+      "fieldType": "text-input",
+      "type": "string",
+      "label": "<p>hiddenKYCPreferredMode</p>",
+      "visible": false,
+      "enabled": false,
+      "events": {
+        "custom:setProperty": "$event.payload"
+      }
+    },
+    "textinput_1504418257": {
+      "name": "hiddenVkycConsentFlag",
+      "dataRef": "$.vkycConsentFlag",
+      "fieldType": "text-input",
+      "type": "string",
+      "label": "<p>hiddenVkycConsentFlag</p>",
+      "visible": false,
+      "default": "S",
+      "events": {
+        "custom:setProperty": "$event.payload"
+      }
+    },
+    "textinput_1677002495": {
+      "name": "hiddenVkycConsentDate",
+      "dataRef": "$.vkycConsentDate",
+      "fieldType": "text-input",
+      "type": "string",
+      "label": "<p>hiddenVkycConsentDate</p>",
+      "visible": false,
+      "events": {
+        "custom:setProperty": "$event.payload"
+      }
+    }
+  }
+}

@@ -14,7 +14,7 @@ if (!inputPath) {
 
 const model = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
 
-const KEEP_FIELD_KEYS = ['name', 'dataRef', 'fieldType', 'type', 'label', 'visible', 'enabled', 'default', 'enum', 'enumNames', 'required', 'events', 'rules'];
+const KEEP_FIELD_KEYS = ['name', 'dataRef', 'fieldType', 'type', 'label', 'visible', 'enabled', 'readOnly', 'repeatable', 'default', 'enum', 'enumNames', 'required', 'maxLength', 'minLength', 'events', 'rules'];
 const SKIP_FIELD_TYPES = ['plain-text', 'image'];
 
 function distillLabel(label) {
@@ -42,8 +42,10 @@ function distillField(item) {
     if (item[key] === undefined || item[key] === null) continue;
     if (key === 'label') { const l = distillLabel(item.label); if (l) out.label = l; }
     else if (key === 'events') { const e = distillEvents(item.events); if (e) out.events = e; }
-    else if (key === 'visible' && item.visible === true) continue; // default, skip
-    else if (key === 'enabled' && item.enabled === true) continue; // default, skip
+    else if (key === 'visible' && item.visible === true) continue;
+    else if (key === 'enabled' && item.enabled === true) continue;
+    else if (key === 'readOnly' && item.readOnly === false) continue;
+    else if (key === 'repeatable' && item.repeatable === false) continue;
     else out[key] = item[key];
   }
 
