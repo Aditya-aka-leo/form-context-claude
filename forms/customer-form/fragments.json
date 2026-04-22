@@ -1,0 +1,27 @@
+{
+  "form": "customer-form",
+  "contentPath": "/content/forms/af/hdfc/loans/assisted/bl/customer-form",
+  "baseHost": "https://author-p153560-e1607906.adobeaemcloud.com",
+  "fragments": {
+    "bankConsentScreen": "/content/forms/af/hdfc/loans/assisted/bl/fragments/bankConsentScreen",
+    "importantLinksScreen": "/content/forms/af/hdfc/loans/assisted/bl/fragments/importantLinksScreen",
+    "otpAuthenticationScreen": "/content/forms/af/hdfc/loans/assisted/bl/fragments/otpAuthenticationScreen",
+    "kycConsentScreen": "/content/forms/af/hdfc/loans/assisted/bl/fragments/kycConsentScreen",
+    "customerDashboardScreen": "/content/forms/af/hdfc/loans/assisted/bl/fragments/customerDashboardScreen",
+    "errorscreen": "/content/forms/af/hdfc/loans/assisted/common/fragments/errorscreen",
+    "loaderfragment": "/content/forms/af/hdfc/loans/assisted/common/fragments/loaderfragment",
+    "choiceall": "/content/forms/af/hdfc/loans/assisted/bl/fragments/choiceall",
+    "generatingofferscreen": "/content/forms/af/hdfc/loans/assisted/common/fragments/generatingofferscreen",
+    "reinitiateincomeverification": "/content/forms/af/hdfc/loans/assisted/common/fragments/reinitiateincomeverification",
+    "chooseall": "/content/forms/af/hdfc/loans/assisted/common/fragments/chooseall",
+    "reviewdetailsbl": "/content/forms/af/hdfc/loans/assisted/bl/fragments/reviewdetailsbl",
+    "analysingCustomerCreditScreen": "/content/forms/af/hdfc/loans/assisted/common/fragments/analysingCustomerCreditScreen",
+    "losdetails": "/content/forms/af/hdfc/loans/assisted/common/fragments/losdetails",
+    "docupload-xbl": "/content/forms/af/hdfc/loans/assisted/bl/fragments/docupload-xbl",
+    "resumeCustomerThankyouScreen": "/content/forms/af/hdfc/loans/assisted/common/fragments/resumeCustomerThankyouScreen",
+    "thankyouscreen": "/content/forms/af/hdfc/loans/assisted/common/fragments/thankyouscreen",
+    "emailotpauthenticationscreen": "/content/forms/af/hdfc/loans/assisted/common/fragments/emailotpauthenticationscreen",
+    "socBL": "/content/forms/af/hdfc/loans/assisted/bl/fragments/socBL",
+    "gstitrverify": "/content/forms/af/hdfc/loans/assisted/bl/fragments/gstitrverify"
+  }
+}

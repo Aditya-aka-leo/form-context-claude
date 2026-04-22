@@ -1,6 +1,6 @@
 # AEM Forms Context
 
-This project caches AEM form models locally under `forms/` so Claude has field-level context when working on form logic — without burning context on noise.
+This project caches AEM form models locally under `.form-context/` (gitignored) so Claude has field-level context when working on form logic — without polluting the project repo or burning context on noise.
 
 ## File tiers (read in this order, stop when you have enough)
 
@@ -93,21 +93,21 @@ Read `model.json` only when:
 **The raw `model.json` is always available locally** (gitignored but present after fetch). Read it directly:
 ```bash
 # Base form
-forms/<form-name>/<form-name>.model.json
+.form-context/forms/<form-name>/<form-name>.model.json
 
 # Fragment
-forms/<form-name>/fragments/<fragment-name>.model.json
+.form-context/forms/<form-name>/fragments/<fragment-name>.model.json
 ```
 
 If the file doesn't exist locally (not yet fetched), re-fetch it:
 ```bash
-COOKIE=$(cat .aem-auth)
+COOKIE=$(cat .form-context/.aem-auth)
 curl -s -H "Cookie: $COOKIE" \
   "<baseHost><contentPath>/jcr:content/root/section/form.model.json" | node -e "
   const d=[];
   process.stdin.on('data',c=>d.push(c));
   process.stdin.on('end',()=>process.stdout.write(JSON.stringify(JSON.parse(d.join('')),null,2)));
-" > "forms/<form-name>/fragments/<name>.model.json"
+" > ".form-context/forms/<form-name>/fragments/<name>.model.json"
 ```
 
 ---
@@ -124,20 +124,20 @@ Fragments are not simply on/off. Their visibility depends on form state variable
 
 ## How to fetch a fragment on demand
 
-1. Read `forms/<form-name>/fragments.json` — find content path and base host
+1. Read `.form-context/forms/<form-name>/fragments.json` — find content path and base host
 2. Check if `.micro.json` or `.summary.json` already exists — if yes, just read it
 3. If not, fetch and distill:
 
 ```bash
-COOKIE=$(cat .aem-auth)
+COOKIE=$(cat .form-context/.aem-auth)
 curl -s -H "Cookie: $COOKIE" \
   "<baseHost><fragmentPath>/jcr:content/root/section/form.model.json" | node -e "
   const d=[];
   process.stdin.on('data',c=>d.push(c));
   process.stdin.on('end',()=>process.stdout.write(JSON.stringify(JSON.parse(d.join('')),null,2)));
-" > "forms/<form>/fragments/<name>.model.json"
+" > ".form-context/forms/<form>/fragments/<name>.model.json"
 
-node scripts/distill.js "forms/<form>/fragments/<name>.model.json"
+node .form-context/scripts/distill.js ".form-context/forms/<form>/fragments/<name>.model.json"
 ```
 
 4. Read `.micro.json` if it exists, else `.summary.json`
@@ -161,23 +161,29 @@ Never load more than 2 fragment files into context at once unless the bug explic
 ## If .aem-auth is missing
 
 Tell the user:
-> "I need your AEM session cookie. In Chrome DevTools on the AEM tab: Network → click any request → Request Headers → copy the full `Cookie:` header value. Paste it here and I'll save it to `.aem-auth`."
+> "I need your AEM session cookie. In Chrome DevTools on the AEM tab: Network → click any request → Request Headers → copy the full `Cookie:` header value. Paste it here and I'll save it to `.form-context/.aem-auth`."
 
 ---
 
 ## Cache structure
 
+Everything lives under `.form-context/` — gitignored, never goes into the project repo.
+
 ```
-forms/
-└── <form-name>/
-    ├── <form-name>.model.json     ← raw (gitignored)
-    ├── <form-name>.summary.json   ← distilled, committed
-    ├── <form-name>.micro.json     ← field index, committed
-    ├── fragments.json             ← index of all fragments
-    └── fragments/
-        ├── <name>.model.json      ← raw (gitignored)
-        ├── <name>.summary.json    ← distilled, committed
-        └── <name>.micro.json      ← large fragments only, committed
+.form-context/                          ← gitignored entirely
+├── .aem-auth                           ← AEM session cookie
+├── scripts/
+│   └── distill.js
+└── forms/
+    └── <form-name>/
+        ├── <form-name>.model.json      ← raw (ground truth)
+        ├── <form-name>.summary.json    ← distilled
+        ├── <form-name>.micro.json      ← field index
+        ├── fragments.json              ← fragment index
+        └── fragments/
+            ├── <name>.model.json       ← raw
+            ├── <name>.summary.json     ← distilled
+            └── <name>.micro.json       ← large fragments only
 ```
 
 ## Setting up for a new form

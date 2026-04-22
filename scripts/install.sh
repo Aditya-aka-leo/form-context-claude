@@ -1,5 +1,7 @@
 #!/bin/bash
-# Installs aem-forms-context skills into a project's .claude/commands/ directory
+# Installs form-context-claude into a project.
+# Everything goes into .form-context/ (gitignored).
+# Only the slash command goes into .claude/commands/ (required by Claude Code).
 
 set -e
 
@@ -7,67 +9,46 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 
 TARGET_DIR="${1:-$(pwd)}"
-COMMANDS_DIR="$TARGET_DIR/.claude/commands"
+FC_DIR="$TARGET_DIR/.form-context"
 
-echo "Installing aem-forms-context into: $TARGET_DIR"
+echo "Installing form-context-claude into: $TARGET_DIR"
 echo ""
 
-# 1. Copy slash commands
-mkdir -p "$COMMANDS_DIR"
-for cmd_file in "$REPO_ROOT/commands/"*.md; do
-  cp "$cmd_file" "$COMMANDS_DIR/"
-  echo "  ✓ commands/$(basename "$cmd_file")"
-done
+# 1. Create .form-context/ structure
+mkdir -p "$FC_DIR/forms"
+mkdir -p "$FC_DIR/scripts"
 
-# 2. Merge CLAUDE.md — append if exists, create if not
-TARGET_CLAUDE="$TARGET_DIR/CLAUDE.md"
-SOURCE_CLAUDE="$REPO_ROOT/CLAUDE.md"
-MARKER="# AEM Forms Context"
+# 2. Copy distill.js into .form-context/scripts/
+cp "$REPO_ROOT/scripts/distill.js" "$FC_DIR/scripts/distill.js"
+echo "  ✓ .form-context/scripts/distill.js"
 
-if [ -f "$TARGET_CLAUDE" ]; then
-  if grep -q "$MARKER" "$TARGET_CLAUDE"; then
-    echo "  ~ CLAUDE.md already contains AEM Forms Context section, skipping"
-  else
-    echo "" >> "$TARGET_CLAUDE"
-    echo "---" >> "$TARGET_CLAUDE"
-    echo "" >> "$TARGET_CLAUDE"
-    cat "$SOURCE_CLAUDE" >> "$TARGET_CLAUDE"
-    echo "  ✓ merged AEM Forms Context into CLAUDE.md"
-  fi
-else
-  cp "$SOURCE_CLAUDE" "$TARGET_CLAUDE"
-  echo "  ✓ created CLAUDE.md"
-fi
+# 3. Copy CLAUDE.md into .form-context/
+cp "$REPO_ROOT/CLAUDE.md" "$FC_DIR/CLAUDE.md"
+echo "  ✓ .form-context/CLAUDE.md"
 
-# 3. Ensure .aem-auth is gitignored
+# 4. Copy slash command into .claude/commands/ (Claude Code requires this location)
+mkdir -p "$TARGET_DIR/.claude/commands"
+cp "$REPO_ROOT/commands/fetch-form-model.md" "$TARGET_DIR/.claude/commands/"
+echo "  ✓ .claude/commands/fetch-form-model.md"
+
+# 5. Gitignore .form-context/ entirely
 GITIGNORE="$TARGET_DIR/.gitignore"
 if [ -f "$GITIGNORE" ]; then
-  if ! grep -q "\.aem-auth" "$GITIGNORE"; then
-    echo ".aem-auth" >> "$GITIGNORE"
-    echo "  ✓ added .aem-auth to .gitignore"
+  if ! grep -q "\.form-context/" "$GITIGNORE"; then
+    echo ".form-context/" >> "$GITIGNORE"
+    echo "  ✓ added .form-context/ to .gitignore"
   else
-    echo "  ~ .aem-auth already in .gitignore"
+    echo "  ~ .form-context/ already in .gitignore"
   fi
 else
-  echo ".aem-auth" > "$GITIGNORE"
-  echo "  ✓ created .gitignore"
+  echo ".form-context/" > "$GITIGNORE"
+  echo "  ✓ created .gitignore with .form-context/"
 fi
-
-# 4. Copy scripts (distill.js needed at runtime)
-mkdir -p "$TARGET_DIR/scripts"
-cp "$REPO_ROOT/scripts/distill.js" "$TARGET_DIR/scripts/distill.js"
-echo "  ✓ scripts/distill.js"
-
-# 5. Create forms/ folder
-mkdir -p "$TARGET_DIR/forms"
-if [ ! -f "$TARGET_DIR/forms/.gitkeep" ]; then
-  touch "$TARGET_DIR/forms/.gitkeep"
-fi
-echo "  ✓ forms/ directory ready"
 
 echo ""
-echo "Done. Next steps:"
+echo "Done. Everything lives in .form-context/ (gitignored)."
+echo ""
+echo "Next steps:"
 echo "  1. Get your AEM cookie: DevTools → Network → any AEM request → copy Cookie header value"
-echo "  2. Save it: echo '<paste-cookie>' > .aem-auth"
-echo "  3. Run in Claude Code: /fetch-form-model <aem-form-url>"
-echo "  4. Claude will auto-fetch fragment context during discussions"
+echo "  2. Save it:  echo '<paste-cookie>' > $FC_DIR/.aem-auth"
+echo "  3. In Claude Code: /fetch-form-model <aem-form-url>"
