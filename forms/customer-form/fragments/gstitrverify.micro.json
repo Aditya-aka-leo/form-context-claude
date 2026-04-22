@@ -85,7 +85,7 @@
     {
       "field": "verifyGstSection",
       "event": "custom:gstinVerified",
-      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati…[TRUNCATED: read summary.json]"
     },
     {
       "field": "verifyGstSection",
@@ -105,17 +105,17 @@
     {
       "field": "verifyGstSection",
       "event": "custom:gstinDisabled",
-      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati…[TRUNCATED: read summary.json]"
     },
     {
       "field": "disableTimer",
       "event": "custom:timerComplete",
-      "expr": "dispatchEvent(gstInitialPhase, 'custom:setProperty', {enabled : true()}) | dispatchEvent(gstDisableText, 'custom:setProperty', {visible : false()}) | setVariable('attemptsLeft', 3, $form.verifyGstSection.gstinEntriesPanel[getRelativeInstanceIndex($form.verifyGstSection.gstinEntriesPanel)].gstinEntry"
+      "expr": "dispatchEvent(gstInitialPhase, 'custom:setProperty', {enabled : true()}) | dispatchEvent(gstDisableText, 'custom:setProperty', {visible : false()}) | setVariable('attemptsLeft', 3, $form.verifyGstSection.gstinEntriesPanel[getRelativeInstanceIndex($form.verifyGstSection.gstinEntriesPanel)].gstinEntry…[TRUNCATED: read summary.json]"
     },
     {
       "field": "gstVerifyButton",
       "event": "custom:wsdlSuccess_969806_1772528190819",
-      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.otpModal, 'custom:gstUsernameVerified'), {}) | if(toObject($event.payload.body).status.responseCode == '0', setVariable('currentGSTIN', gstinNumber, $form), {}) | if(toObject($event.payload.body).status.responseCode == "
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.otpModal, 'custom:gstUsernameVerified'), {}) | if(toObject($event.payload.body).status.responseCode == '0', setVariable('currentGSTIN', gstinNumber, $form), {}) | if(toObject($event.payload.body).status.responseCode == …[TRUNCATED: read summary.json]"
     },
     {
       "field": "gstVerifyButton",
@@ -130,7 +130,7 @@
     {
       "field": "gstVerifyButton",
       "event": "click",
-      "expr": "if((true() && (validate($form.verifyGstSection.gstinEntriesPanel[getRelativeInstanceIndex($form.verifyGstSection.gstinEntriesPanel)].gstinEntry.gstInitialPhase.gstinNumber).length==0 && validate($form.verifyGstSection.gstinEntriesPanel[getRelativeInstanceIndex($form.verifyGstSection.gstinEntriesPane"
+      "expr": "if((true() && (validate($form.verifyGstSection.gstinEntriesPanel[getRelativeInstanceIndex($form.verifyGstSection.gstinEntriesPanel)].gstinEntry.gstInitialPhase.gstinNumber).length==0 && validate($form.verifyGstSection.gstinEntriesPanel[getRelativeInstanceIndex($form.verifyGstSection.gstinEntriesPane…[TRUNCATED: read summary.json]"
     },
     {
       "field": "addGstinButton",
@@ -150,12 +150,12 @@
     {
       "field": "verifyItrSection",
       "event": "custom:itrDisabled",
-      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati…[TRUNCATED: read summary.json]"
     },
     {
       "field": "verifyItrSection",
       "event": "custom:itrVerified",
-      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati"
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyName'),\"productName\": 'BL'},\"requestData\": {\"applicati…[TRUNCATED: read summary.json]"
     },
     {
       "field": "verifyItrSection",
@@ -170,7 +170,7 @@
     {
       "field": "itrVerifyButton",
       "event": "click",
-      "expr": "if((true() && (validate($form.verifyItrSection.itrInitialPhase.itrPassword).length==0 && getVariable('attemptsLeft', $form.verifyItrSection) > 0)), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/panEnquiry.json'), 'POST', {\"requestString\": {\"mobileNo\": t"
+      "expr": "if((true() && (validate($form.verifyItrSection.itrInitialPhase.itrPassword).length==0 && getVariable('attemptsLeft', $form.verifyItrSection) > 0)), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/panEnquiry.json'), 'POST', {\"requestString\": {\"mobileNo\": t…[TRUNCATED: read summary.json]"
     },
     {
       "field": "itrVerifyButton",
@@ -190,7 +190,7 @@
     {
       "field": "continueButton",
       "event": "click",
-      "expr": "dispatchEvent($form, 'custom:gstItrStepContinued') | awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyN"
+      "expr": "dispatchEvent($form, 'custom:gstItrStepContinued') | awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyN…[TRUNCATED: read summary.json]"
     },
     {
       "field": "skipverification",
@@ -200,7 +200,7 @@
     {
       "field": "skipverification",
       "event": "click",
-      "expr": "dispatchEvent($form, 'custom:gstItrStepSkipped') | awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyNam"
+      "expr": "dispatchEvent($form, 'custom:gstItrStepSkipped') | awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId'),\"journeyName\": getVariable('journeyNam…[TRUNCATED: read summary.json]"
     },
     {
       "field": "otpModal",
@@ -215,12 +215,12 @@
     {
       "field": "resendOtpTimer",
       "event": "click",
-      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/panEnquiry.json'), 'POST', {\"requestString\": {\"mobileNo\": getVariable('mob'),\"operationMode\": '7',\"partnerJourneyID\": getVariable('pjid'),\"partnerID\": 'HDFCBANK',\"productName\": 'BL',\"bankJourneyID\": getVaria"
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/panEnquiry.json'), 'POST', {\"requestString\": {\"mobileNo\": getVariable('mob'),\"operationMode\": '7',\"partnerJourneyID\": getVariable('pjid'),\"partnerID\": 'HDFCBANK',\"productName\": 'BL',\"bankJourneyID\": getVaria…[TRUNCATED: read summary.json]"
     },
     {
       "field": "resendOtpTimer",
       "event": "custom:wsdlSuccess_528949_1771953616685",
-      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($field, 'custom:resetOtpCounter'), {}) | if(toObject($event.payload.body).status.responseCode == '0', setVariable('retries', (getVariable('retries', $form.verifyGstSection.gstinEntriesPanel[getRelativeInstanceIndex($form.veri"
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($field, 'custom:resetOtpCounter'), {}) | if(toObject($event.payload.body).status.responseCode == '0', setVariable('retries', (getVariable('retries', $form.verifyGstSection.gstinEntriesPanel[getRelativeInstanceIndex($form.veri…[TRUNCATED: read summary.json]"
     },
     {
       "field": "otpverifybutton",
@@ -235,7 +235,7 @@
     {
       "field": "otpverifybutton",
       "event": "click",
-      "expr": "if((true() && validate($form.otpModal.otpInput).length==0), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/panEnquiry.json'), 'POST', {\"requestString\": {\"mobileNo\": toString(getVariable('mob')),\"operationMode\": '7',\"partnerJourneyID\": getVariable('pjid')"
+      "expr": "if((true() && validate($form.otpModal.otpInput).length==0), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/panEnquiry.json'), 'POST', {\"requestString\": {\"mobileNo\": toString(getVariable('mob')),\"operationMode\": '7',\"partnerJourneyID\": getVariable('pjid')…[TRUNCATED: read summary.json]"
     }
   ]
 }

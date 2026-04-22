@@ -43,8 +43,14 @@ function distillField(item) {
 
   // Fragment boundary — emit stub, do not expand inline content
   if (item.fragmentPath) {
-    const stub = { name: item.name, fragmentRef: item.fragmentPath.split('/').pop(), fragmentPath: item.fragmentPath };
-    if (item.visible === false) stub.visible = false;
+    const stub = {
+      name:         item.name,
+      fragmentRef:  item.fragmentPath.split('/').pop(),
+      fragmentPath: item.fragmentPath,
+    };
+    if (item.visible  === false) stub.visible  = false;
+    if (item.enabled  === false) stub.enabled  = false;
+    if (item.readOnly === true)  stub.readOnly  = true;
     const e = distillEvents(item.events);
     if (e) stub.events = e;
     return stub;
@@ -125,7 +131,8 @@ if (sumSize > MICRO_THRESHOLD) {
       for (const [evt, expr] of Object.entries(obj.events)) {
         const exprStr = Array.isArray(expr) ? expr.join(' | ') : String(expr);
         if (exprStr.length > 20 && !exprStr.match(/^\$event\.payload$/)) {
-          rules.push({ field: obj.name || panelPath, event: evt, expr: exprStr.slice(0, 300) });
+          const truncated = exprStr.length > 300;
+          rules.push({ field: obj.name || panelPath, event: evt, expr: exprStr.slice(0, 300) + (truncated ? '…[TRUNCATED: read summary.json]' : '') });
         }
       }
     }
