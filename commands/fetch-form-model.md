@@ -56,9 +56,9 @@ curl -s -H "Cookie: $COOKIE" "<model-url>" | node -e "
 " > forms/<form-name>/<form-name>.model.json
 ```
 
-Save to:
-```
-forms/<form-name>/<form-name>.model.json
+Then run the distiller to create a compact summary:
+```bash
+node scripts/distill.js forms/<form-name>/<form-name>.model.json
 ```
 
 ### Step 4 — Build the fragment index (do NOT fetch fragments yet)
@@ -128,7 +128,11 @@ curl -s -H "Cookie: $COOKIE" \
   process.stdin.on('data', c => d.push(c));
   process.stdin.on('end', () => process.stdout.write(JSON.stringify(JSON.parse(d.join('')), null, 2)));
 " > "forms/<form-name>/fragments/<fragment-name>.model.json"
+
+node scripts/distill.js "forms/<form-name>/fragments/<fragment-name>.model.json"
 ```
+
+Claude should read the `.summary.json` file by default. Only read the full `.model.json` if the summary lacks enough detail.
 
 3. Read and use the saved fragment model for the current discussion
 

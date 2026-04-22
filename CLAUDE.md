@@ -54,9 +54,14 @@ curl -s -H "Cookie: login-token=$AUTH" \
   -o "forms/${FORM_NAME}/fragments/${FRAGMENT_NAME}.model.json"
 ```
 
-4. Read the saved file and use it for the current discussion
+4. Run the distiller to generate a compact summary:
+```bash
+node scripts/distill.js "forms/<form-name>/fragments/<fragment-name>.model.json"
+```
 
-If the fragment model file already exists locally, just read it — no re-fetch needed.
+5. **Read the `.summary.json`** — it strips display-only noise (plain-text, images) and retains fields, rules, and events. Typically 65-80% smaller than the full model. Only open the full `.model.json` if the summary lacks sufficient detail.
+
+If the `.summary.json` already exists locally, just read it — no re-fetch needed.
 
 ## If .aem-auth is missing
 
