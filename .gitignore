@@ -1,0 +1,4 @@
+.aem-auth
+forms/**/*.model.json
+forms/**/index.md
+!forms/.gitkeep
