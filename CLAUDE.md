@@ -137,7 +137,7 @@ curl -s -H "Cookie: $COOKIE" \
   process.stdin.on('end',()=>process.stdout.write(JSON.stringify(JSON.parse(d.join('')),null,2)));
 " > ".form-context/forms/<form>/fragments/<name>.model.json"
 
-node .form-context/scripts/distill.js ".form-context/forms/<form>/fragments/<name>.model.json"
+node .form-context/scripts/distill.cjs ".form-context/forms/<form>/fragments/<name>.model.json"
 ```
 
 4. Read `.micro.json` if it exists, else `.summary.json`
@@ -173,7 +173,7 @@ Everything lives under `.form-context/` — gitignored, never goes into the proj
 .form-context/                          ← gitignored entirely
 ├── .aem-auth                           ← AEM session cookie
 ├── scripts/
-│   └── distill.js
+│   └── distill.cjs
 └── forms/
     └── <form-name>/
         ├── <form-name>.model.json      ← raw (ground truth)

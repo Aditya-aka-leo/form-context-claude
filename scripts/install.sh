@@ -18,9 +18,9 @@ echo ""
 mkdir -p "$FC_DIR/forms"
 mkdir -p "$FC_DIR/scripts"
 
-# 2. Copy distill.js into .form-context/scripts/
-cp "$REPO_ROOT/scripts/distill.js" "$FC_DIR/scripts/distill.js"
-echo "  ✓ .form-context/scripts/distill.js"
+# 2. Copy distill.cjs into .form-context/scripts/
+cp "$REPO_ROOT/scripts/distill.cjs" "$FC_DIR/scripts/distill.cjs"
+echo "  ✓ .form-context/scripts/distill.cjs"
 
 # 3. Copy CLAUDE.md into .form-context/
 cp "$REPO_ROOT/CLAUDE.md" "$FC_DIR/CLAUDE.md"

@@ -61,13 +61,13 @@ curl -s -H "Cookie: $COOKIE" "<model-url>" | node -e "
 
 Then distill:
 ```bash
-node .form-context/scripts/distill.js .form-context/forms/<form-name>/<form-name>.model.json
+node .form-context/scripts/distill.cjs .form-context/forms/<form-name>/<form-name>.model.json
 ```
 
 ### Step 4 — Build the fragment index (do NOT fetch fragments yet)
 
 ```bash
-node -e "
+node --input-type=commonjs << 'SCRIPT'
 const fs = require('fs');
 const model = JSON.parse(fs.readFileSync('.form-context/forms/<form-name>/<form-name>.model.json', 'utf8'));
 const fragments = {};
@@ -85,7 +85,7 @@ const index = { form: '<form-name>', contentPath: '<content-path>', baseHost: '<
 fs.writeFileSync('.form-context/forms/<form-name>/fragments.json', JSON.stringify(index, null, 2));
 console.log('Fragments found:', Object.keys(fragments).length);
 Object.entries(fragments).forEach(([n]) => console.log(' -', n));
-"
+SCRIPT
 ```
 
 ### Step 5 — Report to user
@@ -122,7 +122,7 @@ curl -s -H "Cookie: $COOKIE" \
   process.stdin.on('end',()=>process.stdout.write(JSON.stringify(JSON.parse(d.join('')),null,2)));
 " > ".form-context/forms/<form-name>/fragments/<name>.model.json"
 
-node .form-context/scripts/distill.js ".form-context/forms/<form-name>/fragments/<name>.model.json"
+node .form-context/scripts/distill.cjs ".form-context/forms/<form-name>/fragments/<name>.model.json"
 ```
 
 Read `.micro.json` if it exists, else `.summary.json`. Fall back to full `.model.json` only if needed.
