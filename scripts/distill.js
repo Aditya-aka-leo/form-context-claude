@@ -40,6 +40,16 @@ function distillEvents(events) {
 
 function distillField(item) {
   if (SKIP_TYPES.includes(item.fieldType)) return null;
+
+  // Fragment boundary — emit stub, do not expand inline content
+  if (item.fragmentPath) {
+    const stub = { name: item.name, fragmentRef: item.fragmentPath.split('/').pop(), fragmentPath: item.fragmentPath };
+    if (item.visible === false) stub.visible = false;
+    const e = distillEvents(item.events);
+    if (e) stub.events = e;
+    return stub;
+  }
+
   const out = {};
   for (const key of KEEP_KEYS) {
     if (item[key] == null) continue;

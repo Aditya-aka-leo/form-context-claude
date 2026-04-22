@@ -1,0 +1,1377 @@
+{
+  "title": "open-instant-savings-account-online",
+  "path": "/content/forms/af/hdfc/loans/assisted/bl/customer-form/jcr:content/root/section/form",
+  "fields": [
+    {
+      "panel": "customerConsentWrapper",
+      "name": "consentProceed",
+      "fieldType": "button",
+      "enabled": false
+    },
+    {
+      "panel": "otpValidationWrapper",
+      "name": "submitOTP",
+      "fieldType": "button"
+    },
+    {
+      "panel": "kycConsentWrapper",
+      "name": "kycConsentCTA",
+      "fieldType": "button",
+      "enabled": false
+    },
+    {
+      "panel": "customerDashboardWrapper",
+      "name": "refreshStatus",
+      "fieldType": "button"
+    },
+    {
+      "panel": "tenSecCustomerAvailOfferButtonWrapper",
+      "name": "tenSecCustomerAvailOfferButton",
+      "fieldType": "button"
+    },
+    {
+      "panel": "tenSecCustomerHLButtonWrapper",
+      "name": "tenSecCustomerHLButton",
+      "fieldType": "button"
+    },
+    {
+      "panel": "navigationAlertPopup",
+      "name": "privacyPolicyBtn",
+      "fieldType": "button",
+      "visible": false
+    },
+    {
+      "panel": "navigationAlertPopup",
+      "name": "navigationAlertContinue",
+      "fieldType": "button"
+    },
+    {
+      "panel": "navigationAlertPopup",
+      "name": "navigationAlertClose",
+      "fieldType": "button"
+    },
+    {
+      "panel": "returnJourneyModal",
+      "name": "rjOptions",
+      "fieldType": "radio-group"
+    },
+    {
+      "panel": "returnJourneyModal",
+      "name": "rjProceedClick",
+      "fieldType": "button"
+    },
+    {
+      "name": "analytics",
+      "fieldType": "button",
+      "visible": false,
+      "enabled": false
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "visitType",
+      "dataRef": "$.visitType",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "journeyID",
+      "dataRef": "$.jid",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenTimeStamp",
+      "dataRef": "$.timeStamp",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenMobileNumber",
+      "dataRef": "$.RegisteredPhoneNum",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "leadProfileId",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "kycAPIResponseStatus",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "retryCount",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "retryInterval",
+      "fieldType": "number-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "journeyNameHidden",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenBankJourneyID",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenPartnerJourneyId",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "swimLane",
+      "dataRef": "$.swimLane",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "stateInfo",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenPersonalDataCaptureConsent",
+      "dataRef": "$.personalDataCaptureConsent",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenPersonalizedOffersCaptureConsent",
+      "dataRef": "$.personalizedOffersCaptureConsent",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenChannelCaptureConsent",
+      "dataRef": "$.channelCaptureConsent",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenFilteredDemogData",
+      "dataRef": "$.hiddenFilteredDemogData",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenTenSecondLoanData",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenAadhaarData",
+      "dataRef": "$.aadhaarData",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "aseRetryCount",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "aseRetryInterval",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenStandaloneOTPCheck",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "tenSecondHiddenData",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenPerfiosRetryCount",
+      "dataRef": "$.perfiosCount",
+      "fieldType": "number-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "IPA_pf_customer",
+      "dataRef": "$.IPA_pf_customer",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "kycComplianceCheck",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenEkycStatusFlag",
+      "dataRef": "$.kycFlag",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenDigiliteFlag",
+      "dataRef": "$.hiddenDigiliteFlag",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenDisbursementURL",
+      "dataRef": "$.hiddenDisbursementURL",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenvkycURL",
+      "dataRef": "$.vkycURL",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "lseRetryCount",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "lseRetryInterval",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "bre3STPStatus",
+      "dataRef": "$.bre3STPStatus",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "applyLoanLSELOSNumber",
+      "dataRef": "$.losNumber",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "aadhaarAddrStateID",
+      "dataRef": "$.aadhaarAddrStateID",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "aadhaarAddrCityID",
+      "dataRef": "$.aadhaarAddrCityID",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "aadhaarPincode",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "applicationReferenceNo",
+      "dataRef": "$.applicationReferenceNo",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "kycCompletedStatus",
+      "dataRef": "$.kycCompletedStatus",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "applyForLoanFlagDropOff",
+      "dataRef": "$.applyForLoanFlagDropOff",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "lseBre3RetryCount",
+      "fieldType": "number-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "setJourneyState",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "micrCode",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "personalEmailVerCheck",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "workEmailVerCheck",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "setUpdateAppStatus",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "mlaNumber",
+      "dataRef": "$.mlaNumber",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "finalLoanAmount",
+      "dataRef": "$.finalLoanAmount",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "applyLoanSTPOffer",
+      "dataRef": "$.applyLoanSTPOffer",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "tenSecCampString",
+      "dataRef": "$.campaignstring",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "workemailotpvalidation",
+      "dataRef": "$.workemailotpvalidation",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "optedLoanAmountIPA",
+      "dataRef": "$.optedLoanAmountIPA",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "optedLoanAmountBre",
+      "dataRef": "$.optedLoanAmountBre",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "optedTenureBre",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "optedTenureIPA",
+      "dataRef": "$.optedTenureIPA",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "offerOpted",
+      "dataRef": "$.offerOpted",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "loanAmountBre2",
+      "dataRef": "$.loanAmountBre2",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "rmDashBoardInfo",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "bre2Status",
+      "dataRef": "$.bre2Status",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "loanAmountBre2",
+      "dataRef": "$.loanAmountBre2",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "exsistingCustomer",
+      "dataRef": "$.exsistingCustomer",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "CustDashboardAnalyticsPanel",
+      "dataRef": "$.CustDashboardAnalyticsPanel",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "epfoFlagCust",
+      "dataRef": "$.epfoFlagCust",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "skipInitialCall",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenSadApiPayload",
+      "dataRef": "$.hiddenSadApiPayload",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenGetNSTPPayload",
+      "dataRef": "$.hiddenGetNSTPPayload",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "ekycVkycFlags",
+      "dataRef": "$.hiddenEkycVkycFlags",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenCustomerJourneyType",
+      "dataRef": "$.hiddenCustomerJourneyType",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "isLOSDOCDocumentUploadScreen",
+      "dataRef": "$.isLOSDOCDocumentUploadScreen",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "isPendingDocUploadMandatory",
+      "dataRef": "$.isPendingDocUploadMandatory",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "demogClientIPAddres",
+      "dataRef": "$.customerIpAddress",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "otpExhaustAttempt",
+      "dataRef": "$.otpExhaustAttempt",
+      "fieldType": "number-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenCustomerType",
+      "dataRef": "$.customerType",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenExistingCustomer",
+      "dataRef": "$.existingCustomer",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenReinitKYC",
+      "dataRef": "$.hiddenReinitKYC",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenCustOfferType",
+      "dataRef": "$.demogCustomerOfferType",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "modeOfPerfios",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "customerBre2Data",
+      "dataRef": "$.customerBre2Data",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hardRejectErrorCode",
+      "dataRef": "$.hardRejectErrorCode",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "docUploadStatus",
+      "dataRef": "$.docUploadStatusCustomer",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "perfiosAccountNumberCustomer",
+      "dataRef": "$.perfiosAccountNumberCustomer",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "isFIPInitiated",
+      "dataRef": "$.isFIPInitiated",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenekycDate",
+      "dataRef": "$.hiddenekycDate",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "hiddenFieldsPanel",
+      "name": "hiddenEkycFlag",
+      "dataRef": "$.hiddenEkycFlag",
+      "fieldType": "text-input"
+    },
+    {
+      "name": "rmClientIPAddress",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "name": "IPA_tenure_loamAmt_map_customer",
+      "dataRef": "$.IPA_tenure_loamAmt_map_customer",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "name": "maxTenureIPA_customer",
+      "dataRef": "$.maxTenureIPA_customer",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "name": "IPA_irr_customer",
+      "dataRef": "$.IPA_irr_customer",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "name": "loanAmountIPACustomer",
+      "dataRef": "$.loanAmountIPACustomer",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "name": "breResponseCustomer",
+      "dataRef": "$.breResponseCustomer",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "name": "initialFormReload",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "panel": "security",
+      "name": "publicKey",
+      "dataRef": "$.security.publicKey",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "panel": "security",
+      "name": "enabled",
+      "dataRef": "$.security.enabled",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "panel": "verificationButtonPanel",
+      "name": "reVerificationButton",
+      "fieldType": "button",
+      "visible": false
+    },
+    {
+      "panel": "verificationButtonPanel",
+      "name": "skipVerification",
+      "fieldType": "button",
+      "visible": false
+    },
+    {
+      "name": "proceed-test-aditya-review-screen",
+      "fieldType": "button",
+      "visible": false
+    },
+    {
+      "panel": "reviewDetailsMainWrapper",
+      "name": "reviewDetailsCTA",
+      "fieldType": "button",
+      "enabled": false
+    },
+    {
+      "panel": "docuploadMainWrapper",
+      "name": "docUploadSubmit",
+      "fieldType": "button"
+    },
+    {
+      "panel": "docuploadMainWrapper",
+      "name": "uploadedDocData",
+      "dataRef": "$.uploadedDocData",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "name": "proceedPerfios",
+      "fieldType": "button",
+      "visible": false
+    },
+    {
+      "panel": "emailModalPop",
+      "name": "emailsubmitOTP",
+      "fieldType": "button",
+      "visible": false
+    },
+    {
+      "panel": "emailModalPop",
+      "name": "emailWorksubmitOTP",
+      "fieldType": "button",
+      "visible": false
+    },
+    {
+      "name": "breOfferAccepted",
+      "dataRef": "$.breOfferAccepted",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "panel": "panelIncomeRecalculate",
+      "name": "incRecalculateInput_old",
+      "fieldType": "text-input",
+      "visible": false
+    },
+    {
+      "panel": "panelIncomeRecalculate",
+      "name": "incRecalculateInput",
+      "fieldType": "number-input"
+    },
+    {
+      "panel": "emiRecalculate",
+      "name": "emiRecalculateInut",
+      "fieldType": "text-input"
+    },
+    {
+      "panel": "recalculatePanel",
+      "name": "recalculateSubmitBtn",
+      "fieldType": "button"
+    },
+    {
+      "name": "hiddenURLUsedStatus",
+      "dataRef": "$.urlUsedStatus",
+      "fieldType": "text-input",
+      "visible": false
+    }
+  ],
+  "rules": [
+    {
+      "field": "customerConsentWrapper",
+      "event": "initialize",
+      "expr": "if((true() && getProperty('journeyName') == 'BL_ASSISTED_JOURNEY'), dispatchEvent(importantInfoLinksSection.importantLinkSection.importantLinksWrapper.aboutBusinessLoanSection, 'custom:setProperty', {visible : true()}), {}) | if((true() && getProperty('journeyName') == 'BL_ASSISTED_JOURNEY'), dispat"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:decryptSuccess_961886_1776065350962",
+      "expr": "if(toObject($event.payload).status.responseCode != '0', dispatchEvent($form.customerConsentWrapper, 'custom:setProperty', {visible : false()}), {}) | if(toObject($event.payload).status.responseCode != '0', dispatchEvent($form.errorPanel.errorTitle, 'custom:setProperty', {value : 'Sorry! It is not yo"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:initiate_OTPGenExistingCustomer",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpGen.json'), 'POST', encrypt({body: {\"requestData\": {\"otpGenRequest\": {\"type\": 'sms',\"mobileNo\": toString(getProperty('mob'))}},\"requestContext\": {\"mobileNo\": toString(getProperty('mob')),\"journeyID\": getP"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:wsdlError_941714_1776065350963",
+      "expr": "dispatchEvent($form.errorPanel.errorTitle, 'custom:setProperty', {value : 'Sorry! It is not you, it is the system.'}) | dispatchEvent($form.errorPanel.errorMessage, 'custom:setProperty', {value : 'We are unable to proceed at the moment. Please try again after some time.'}) | dispatchEvent($form.erro"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:update_consentLinkShareFail",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getProperty('journeyID'),\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"productName\": 'BL'},\"req"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:wsdlSuccess_191318_1776065350962",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_191318_1776065350962', 'custom:decryptError_191318_1776065350962')"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:decryptSuccess_941714_1776065350963",
+      "expr": "if(toObject($event.payload).status.responseCode == '1', dispatchEvent($form.errorPanel, 'custom:setProperty', {visible : true()}), {}) | if(toObject($event.payload).status.responseCode == '1', dispatchEvent($form.errorPanel.errorMessage, 'custom:setProperty', {value : 'We are unable to proceed at th"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:demogdata_notfound",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getProperty('journeyID'),\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"productName\": 'BL'},\"req"
+    },
+    {
+      "field": "consentProceed",
+      "event": "click",
+      "expr": "if((true() && (getProperty('existingCustomer') == 'N' && $form.customerConsentWrapper.customerConsentSection.personalDataConsentCapture.landingMandatoryConsent.$value == 'Yes')), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpValAndFetchCustDemog.json"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:decryptSuccess_320712_1776065350961",
+      "expr": "if(toObject($event.payload).status.responseCode == '0', dispatchEvent($form.customerConsentWrapper, 'custom:setProperty', {visible : false()}), {}) | if(toObject($event.payload).status.responseCode == '0', dispatchEvent($form.otpValidationWrapper.otpValidationSection.aadharOtpPanel.otpSubPanel.resen"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:wsdlSuccess_484102_1776065350964",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_484102_1776065350964', 'custom:decryptError_484102_1776065350964')"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:wsdlSuccess_961886_1776065350962",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_961886_1776065350962', 'custom:decryptError_961886_1776065350962')"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:wsdlSuccess_833832_1776065350963",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_833832_1776065350963', 'custom:decryptError_833832_1776065350963')"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:wsdlSuccess_320712_1776065350961",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_320712_1776065350961', 'custom:decryptError_320712_1776065350961')"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:triggerJourneyStateDemogEmpty",
+      "expr": "setFieldProperty($field,'currentState','CUSTOMER_CONSENT_CAPTURED')"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:decryptSuccess_484102_1776065350964",
+      "expr": "if(toObject($event.payload).status.responseCode != '0', dispatchEvent($form.customerConsentWrapper, 'custom:setProperty', {visible : false()}), {}) | if(toObject($event.payload).status.responseCode != '0', dispatchEvent($form.errorPanel.errorTitle, 'custom:setProperty', {value : 'Sorry! It is not yo"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:wsdlSuccess_941714_1776065350963",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_941714_1776065350963', 'custom:decryptError_941714_1776065350963')"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:wsdlError_833832_1776065350963",
+      "expr": "dispatchEvent($form.customerConsentWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.errorPanel, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.errorPanel.errorTitle, 'custom:setProperty', {value : 'Sorry! It is not you, it is the system.'}) | dispatchEvent($"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:decryptSuccess_833832_1776065350963",
+      "expr": "if(toObject($event.payload).status.responseCode == '1', dispatchEvent($form.errorPanel, 'custom:setProperty', {visible : true()}), {}) | if(toObject($event.payload).status.responseCode == '1', dispatchEvent($form.errorPanel.errorMessage, 'custom:setProperty', {value : 'We are unable to proceed at th"
+    },
+    {
+      "field": "consentProceed",
+      "event": "custom:initiate_consentReceipts",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_consent_management/api/consentreceipts.json'), 'POST', encrypt({body: {\"consentReceiptsDetails\": {\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"journeyID\": getProperty('journeyID'),\"userAgent\": getProperty('browserAg"
+    },
+    {
+      "field": "otpValidationSection",
+      "event": "custom:resendEmailOtpGen",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/GenerateEmailOTP.json'), 'POST', {\"requestString\": {\"mobileNo\": getProperty('mob'),\"partnerJourneyID\": getProperty('pjid'),\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"journeyID\": $form.hiddenFieldsPane"
+    },
+    {
+      "field": "otpValidationSection",
+      "event": "custom:goBackToReviewDetails",
+      "expr": "dispatchEvent($form.reviewDetailsMainWrapper, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.otpValidationWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.reviewDetailsMainWrapper.reviewDetailsSection.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrap"
+    },
+    {
+      "field": "otpValidationSection",
+      "event": "custom:wsdlSuccess_762261_1767679300739",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent(aadharOtpPanel.otpSubPanel.resendWorkEmailOtp, 'custom:resetOtpCounter'), {})"
+    },
+    {
+      "field": "otpValidationSection",
+      "event": "initialize",
+      "expr": "dispatchEvent(aadharOtpPanel.otpSubPanel.resendOtp, 'custom:resetOtpCounter') | dispatchEvent(aadharOtpPanel.otpInput, 'custom:setProperty', {valid : true()})"
+    },
+    {
+      "field": "otpValidationSection",
+      "event": "custom:goBackToReviewDetailsWork",
+      "expr": "dispatchEvent($form.reviewDetailsMainWrapper, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.otpValidationWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.reviewDetailsMainWrapper.reviewDetailsSection.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrap"
+    },
+    {
+      "field": "otpValidationSection",
+      "event": "custom:resendWorkEmailOtpGen",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/GenerateEmailOTP.json'), 'POST', {\"requestString\": {\"mobileNo\": getProperty('mob'),\"partnerJourneyID\": getProperty('pjid'),\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"journeyID\": $form.hiddenFieldsPane"
+    },
+    {
+      "field": "otpValidationSection",
+      "event": "custom:wsdlSuccess_824523_1767679300739",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent(aadharOtpPanel.otpSubPanel.resendEmailOtp, 'custom:resetOtpCounter'), {})"
+    },
+    {
+      "field": "submitOTP",
+      "event": "custom:updateApp_ConsentGivenFail",
+      "expr": "if(getProperty('journeyState') == 'RM_SHARED_CONSENT' || ($form.hiddenFieldsPanel.visitType.$value == 'KYC_SUCCESS_NTB' || $form.hiddenFieldsPanel.visitType.$value == 'KYC_FAILURE_NTB'), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicati"
+    },
+    {
+      "field": "submitOTP",
+      "event": "custom:wsdlSuccess_904465_1776777679880",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_904465_1776777679880', 'custom:decryptError_904465_1776777679880')"
+    },
+    {
+      "field": "submitOTP",
+      "event": "custom:decryptSuccess_171591_1776777679879",
+      "expr": "if(toObject($event.payload).status.responseCode == '0' && $form.otpValidationWrapper.otpValidationSection.aadharOtpPanel.otpSubPanel.attemptsLeftPanel.maxAttempts.$value == 1, dispatchEvent($form.hiddenFieldsPanel.otpExhaustAttempt, 'custom:setProperty', {value : ($form.hiddenFieldsPanel.otpExhaustA"
+    },
+    {
+      "field": "submitOTP",
+      "event": "custom:decryptSuccess_904465_1776777679880",
+      "expr": "if(toObject($event.payload).status.responseCode == '0' && ((!($form.hiddenFieldsPanel.kycAPIResponseStatus.$value)) && !(getProperty('isJourneyReinitiated'))), dispatchEvent($form.otpValidationWrapper, 'custom:setProperty', {visible : false()}), {}) | if(toObject($event.payload).status.responseCode "
+    },
+    {
+      "field": "submitOTP",
+      "event": "click",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpVal.json'), 'POST', encrypt({body: {\"requestData\": {\"otpValRequest\": {\"passwordValue\": $form.otpValidationWrapper.otpValidationSection.aadharOtpPanel.otpInput.$value}},\"requestContext\": {\"mobileNo\": toStr"
+    },
+    {
+      "field": "submitOTP",
+      "event": "custom:wsdlError_904465_1776777679880",
+      "expr": "setFieldProperty($field,'currentState','CUSTOMER_OTP_VALIDATION_FAILED') | dispatchEvent($form.otpValidationWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.customerDashboardWrapper.customerDashboardSection.customerAppStatusSection.customerConsentStatus, 'custom:setProperty'"
+    },
+    {
+      "field": "submitOTP",
+      "event": "custom:wsdlSuccess_171591_1776777679879",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_171591_1776777679879', 'custom:decryptError_171591_1776777679879')"
+    },
+    {
+      "field": "kycConsentSection",
+      "event": "initialize",
+      "expr": "dispatchEvent(kycConsentSection.kycIdentificationPanel.aadhaarIdentificationPanel.aadhaarRadioPanel.aadhaarChoice, 'custom:setProperty', {value : 'EKYC'})"
+    },
+    {
+      "field": "kycConsentCTA",
+      "event": "custom:wsdlSuccess_473923_1774459231858",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_473923_1774459231858', 'custom:decryptError_473923_1774459231858')"
+    },
+    {
+      "field": "kycConsentCTA",
+      "event": "custom:wsdlSuccess_752882_1774459231858",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_752882_1774459231858', 'custom:decryptError_752882_1774459231858')"
+    },
+    {
+      "field": "kycConsentCTA",
+      "event": "custom:wsdlSuccess_771006_1774459231857",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_771006_1774459231857', 'custom:decryptError_771006_1774459231857')"
+    },
+    {
+      "field": "kycConsentCTA",
+      "event": "custom:initiate_KYCFailed",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', {\"requestContext\": {\"journeyID\": getProperty('journeyID'),\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"productName\": 'BL'},\"requestData\": {\"ap"
+    },
+    {
+      "field": "kycConsentCTA",
+      "event": "custom:wsdlError_473923_1774459231858",
+      "expr": "setProperty('kycStatus','KYC Fail')"
+    },
+    {
+      "field": "kycConsentCTA",
+      "event": "custom:decryptSuccess_771006_1774459231857",
+      "expr": "if(toObject($event.payload).status.responseCode == '0', dispatchEvent($form.customerConsentWrapper, 'custom:setProperty', {visible : false()}), {}) | if(toObject($event.payload).status.responseCode == '0', dispatchEvent($form.otpValidationWrapper.otpValidationSection.aadharOtpPanel.otpSubPanel.resen"
+    },
+    {
+      "field": "kycConsentCTA",
+      "event": "custom:decryptSuccess_473923_1774459231858",
+      "expr": "if(toObject($event.payload).status.responseCode == '0', setFieldProperty($field,'currentState','KYC_INITIATED'), {}) | if(toObject($event.payload).status.responseCode == '0', navigateTo(toObject($event.payload).responseData.kycResponse.url, '_self'), {}) | if(toObject($event.payload).status.response"
+    },
+    {
+      "field": "kycConsentCTA",
+      "event": "custom:initiate_OTPGenKYCConsent",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/otpGen.json'), 'POST', encrypt({body: {\"requestData\": {\"otpGenRequest\": {\"type\": 'sms',\"mobileNo\": toString(getProperty('mob'))}},\"requestContext\": {\"mobileNo\": toString(getProperty('mob')),\"journeyID\": getP"
+    },
+    {
+      "field": "kycConsentCTA",
+      "event": "click",
+      "expr": "if((true() && ((getProperty('existingCustomer') == 'N' || (getProperty('existingCustomer') == 'Y' && getProperty('digiliteFlag') != 'N')) && $form.kycConsentWrapper.kycConsentSection.kycConsentSection.vkycCheck.$value == 'on')), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_consen"
+    },
+    {
+      "field": "kycConsentCTA",
+      "event": "custom:wsdlSuccess_107134_1774459231857",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_107134_1774459231857', 'custom:decryptError_107134_1774459231857')"
+    },
+    {
+      "field": "kycNotePanel",
+      "event": "initialize",
+      "expr": "if((true() && getProperty('journeyName') == 'BL_JOURNEY'), dispatchEvent(kycNote, 'custom:setProperty', {value : 'eKYC/CKYC not working? You can still continue your loan application by uploading any valid OVD like Passport etc. or, visit the nearest HDFC Bank branch to proceed with your business loa"
+    },
+    {
+      "field": "customerDashboardWrapper",
+      "event": "initialize",
+      "expr": "if((true() && getProperty('journeyName') == 'BL_JOURNEY'), dispatchEvent(customerDashboardSection.customerDashboardFirstStepNote, 'custom:setProperty', {value : 'You have taken the first step towards your Business Loan. Our representative will get in touch with you shortly, for further steps!'}), {}"
+    },
+    {
+      "field": "refreshStatus",
+      "event": "click",
+      "expr": "dispatchEvent($form, 'custom:showCustomerDashboardd')"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:showReviewScreenForReEmail",
+      "expr": "dispatchEvent($form.customerDashboardWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.reviewDetailsMainWrapper, 'custom:setProperty', {visible : true()}) | setVariable('triggerEventName', 'reviewScreenShowCustomer', $form.analytics) | dispatchEvent($form.analytics, 'custom:s"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:getApplicationStatus",
+      "expr": "dispatchEvent($form.hiddenFieldsPanel.retryCount, 'custom:setProperty', {value : '-1'}) | awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/getApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getVariable('journeyId', $f"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:wsdlSuccess_609475_1774977484040",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_609475_1774977484040', 'custom:decryptError_609475_1774977484040')"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:reInitiateGstItrVerification",
+      "expr": "dispatchEvent($form.gstItrFragment, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.customerDashboardWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.gstItrFragment, 'custom:gstItrVerificationStarted')"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:decryptSuccess_609475_1774977484040",
+      "expr": "if(!(!(toObject($event.payload).responseData.applicationStatusInfo)), assetsAssistedCustomerDashBoardArrayFormat(toObject($event.payload).responseData.applicationStatusInfo), {})"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:uploadDocumentsBtnClicked",
+      "expr": "dispatchEvent($form.docuploadMainWrapper, 'custom:prepareDocUpload') | dispatchEvent($form.customerDashboardWrapper, 'custom:setProperty', {visible : false()})"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:handleReinitatePerfios",
+      "expr": "dispatchEvent($form.customerDashboardWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.choiceAll, 'custom:setProperty', {visible : true()}) | setVariable('triggerEventName', 'reinitiatePerfiosCustomer', $form.analytics) | dispatchEvent($form.analytics, 'custom:sendAnalytics')"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:gstItrofferGenerated",
+      "expr": "dispatchEvent(addGstErrorModal, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.customerDashboardWrapper.addGstErrorModal.unableToAddGstinText, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.customerDashboardWrapper.addGstErrorModal.unableToAddGSTTextApiFailure, 'cus"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:addMoreGSTIN",
+      "expr": "dispatchEvent($form.customerDashboardWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.gstItrFragment, 'custom:gstItrVerificationStarted')"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:handleReinitateKYC",
+      "expr": "dispatchEvent($form.customerDashboardWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.kycConsentWrapper, 'custom:setProperty', {visible : true()}) | setVariable('triggerEventName', 'reinitiateKYCCustomer', $form.analytics) | dispatchEvent($form.analytics, 'custom:sendAnalyti"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:reinitiateVKYCCustDashboard",
+      "expr": "navigateTo(getProperty('vkycURL'), '_blank')"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:getApplicationStatusFailedForAddingGST",
+      "expr": "dispatchEvent(addGstErrorModal, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.customerDashboardWrapper.addGstErrorModal.unableToAddGstinText, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.customerDashboardWrapper.addGstErrorModal.unableToAddGSTTextApiFailure, 'cu"
+    },
+    {
+      "field": "customerDashboardSection",
+      "event": "custom:showSOCPopUp",
+      "expr": "dispatchEvent($form.socModal, 'custom:setProperty', {visible : true()})"
+    },
+    {
+      "field": "tenSecCustomerAvailOfferButton",
+      "event": "click",
+      "expr": "navigateTo(getProperty('tenSecRedUrl'), '_blank')"
+    },
+    {
+      "field": "tenSecCustomerHLButton",
+      "event": "click",
+      "expr": "dispatchEvent($form, 'custom:showCustDashConsent')"
+    },
+    {
+      "field": "privacyPolicyBtn",
+      "event": "click",
+      "expr": "navigateTo('https://www.hdfcbank.com/personal/useful-links/privacy', '_blank') | dispatchEvent($form.navigationAlertPopup, 'custom:setProperty', {visible : false()}) | setVariable('triggerEventName', 'landing_privacyPolicyBtn', $form.analytics) | dispatchEvent($form.analytics, 'custom:sendAnalytics'"
+    },
+    {
+      "field": "navigationAlertContinue",
+      "event": "click",
+      "expr": "navigateTo('https://www.hdfcbank.com/personal/useful-links/terms-and-conditions', '_blank') | dispatchEvent($form.navigationAlertPopup, 'custom:setProperty', {visible : false()}) | setVariable('triggerEventName', 'landing_tnc', $form.analytics) | dispatchEvent($form.analytics, 'custom:sendAnalytics'"
+    },
+    {
+      "field": "navigationAlertClose",
+      "event": "click",
+      "expr": "dispatchEvent($form.navigationAlertPopup, 'custom:setProperty', {visible : false()})"
+    },
+    {
+      "field": "returnJourneyModal",
+      "event": "custom:initReturnJourney",
+      "expr": "if(!(!(getProperty('capturedReturnJourneState'))) && (getProperty('capturedReturnJourneState') == 'BILLER_DETAILS_ADDED' || getProperty('capturedReturnJourneState') == 'BILLER_DETAILS_CONFIRMED' || getProperty('capturedReturnJourneState') == 'VALIDATE_PAYEMENT_SUCCESS' || getProperty('capturedReturn"
+    },
+    {
+      "field": "rjProceedClick",
+      "event": "click",
+      "expr": "if((true() && rjOptions.$value == '1'), dispatchEvent($form.returnJourneyModal, 'custom:setProperty', {visible : false()}), {}) | if((true() && rjOptions.$value == '1'), setProperty('isReturnJourney','N'), {})"
+    },
+    {
+      "field": "aadhaarPincode",
+      "event": "change",
+      "expr": "if(contains($event.payload.changes[].propertyName, 'value'), if(($field.$value && !(!($field.$value))), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/FetchMasterData.PL.PINCODE_FN_BRANCH.ZIPCODE-' & $field.$value & '.json'), 'GET', {}, {\"Content-Type\": 'application/js"
+    },
+    {
+      "field": "aadhaarPincode",
+      "event": "custom:wsdlSuccess_689814_1760261372260",
+      "expr": "if(length(toObject($event.payload.body)[*].ZIPCODE) > 0, dispatchEvent(aadhaarAddrStateID, 'custom:setProperty', {value : toObject($event.payload.body)[*].STATEID}), {}) | if(length(toObject($event.payload.body)[*].ZIPCODE) > 0, dispatchEvent(aadhaarAddrCityID, 'custom:setProperty', {value : toObjec"
+    },
+    {
+      "field": "setJourneyState",
+      "event": "custom:wsdlSuccess_227852_1762442604607",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_227852_1762442604607', 'custom:decryptError_227852_1762442604607')"
+    },
+    {
+      "field": "setJourneyState",
+      "event": "change",
+      "expr": "if(contains($event.payload.changes[].propertyName, 'value'), if(($field.$value && !(!($field.$value))), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_commonforms/api/journeydropoffupdate.json'), 'POST', encrypt({body: {\"RequestPayload\": {\"userAgent\": getProperty('browserAgent'),\"l"
+    },
+    {
+      "field": "setUpdateAppStatus",
+      "event": "change",
+      "expr": "if(contains($event.payload.changes[].propertyName, 'value'), if(($field.$value && !(!($field.$value))), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": journeyID."
+    },
+    {
+      "field": "setUpdateAppStatus",
+      "event": "custom:decryptSuccess_204518_1776775005573",
+      "expr": "if(toObject($event.payload).status.responseCode != '0', dispatchEvent($form.analysingCustomerCreditPopup, 'custom:setProperty', {visible : false()}), {}) | if(toObject($event.payload).status.responseCode != '0', dispatchEvent($form.errorPanel, 'custom:setProperty', {visible : true()}), {}) | if(toOb"
+    },
+    {
+      "field": "setUpdateAppStatus",
+      "event": "custom:wsdlSuccess_204518_1776775005573",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_204518_1776775005573', 'custom:decryptError_204518_1776775005573')"
+    },
+    {
+      "field": "errorPanel",
+      "event": "custom:otpFailedThreeAttempt",
+      "expr": "dispatchEvent(customerDashboardWrapper, 'custom:setProperty', {visible : true()}) | {visible : false()} | dispatchEvent(errorScreenImage, 'custom:setProperty', {visible : false()}) | dispatchEvent(threeAttemptOtpFail, 'custom:setProperty', {visible : true()}) | setVariable('triggerEventName', 'OTPLi"
+    },
+    {
+      "field": "choiceAll",
+      "event": "custom:wsdlSuccess_334538_1772254741655",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_334538_1772254741655', 'custom:decryptError_334538_1772254741655')"
+    },
+    {
+      "field": "choiceAll",
+      "event": "custom:wsdlSuccess_091151_1772254741654",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_091151_1772254741654', 'custom:decryptError_091151_1772254741654')"
+    },
+    {
+      "field": "choiceAll",
+      "event": "custom:everificationOfferError",
+      "expr": "{visible : false()} | dispatchEvent(errorPanel, 'custom:setProperty', {visible : true()}) | awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getProperty('journeyId"
+    },
+    {
+      "field": "choiceAll",
+      "event": "custom:everificationNowEvent",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getProperty('journeyId'),\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"productName\": 'BL'},\"req"
+    },
+    {
+      "field": "choiceAll",
+      "event": "custom:initiate_perfios",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_consent_management/api/consentreceipts.json'), 'POST', encrypt({body: {\"consentReceiptsDetails\": {\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"journeyID\": getProperty('journeyID'),\"userAgent\": getProperty('browserAg"
+    },
+    {
+      "field": "choiceAll",
+      "event": "custom:wsdlSuccess_415040_1772254741656",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_415040_1772254741656', 'custom:decryptError_415040_1772254741656')"
+    },
+    {
+      "field": "reVerificationButton",
+      "event": "click",
+      "expr": "dispatchEvent($form.reinitiateincomeverificationPanel, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.choiceAll, 'custom:setProperty', {visible : true()}) | {visible : false()} | dispatchEvent(skipVerification, 'custom:setProperty', {visible : false()}) | setVariable('triggerEventN"
+    },
+    {
+      "field": "skipVerification",
+      "event": "click",
+      "expr": "dispatchEvent($form.reinitiateincomeverificationPanel, 'custom:setProperty', {visible : false()}) | dispatchEvent(reVerificationButton, 'custom:setProperty', {visible : false()}) | {visible : false()} | dispatchEvent($form.loanOfferScreen, 'custom:setProperty', {visible : true()}) | dispatchEvent($f"
+    },
+    {
+      "field": "proceed-test-aditya-review-screen",
+      "event": "click",
+      "expr": "if((true() && getProperty('skipKYCFlag') == 'Y'), dispatchEvent(customerOfferAcceptPanel, 'custom:setProperty', {visible : false()}), {}) | if((true() && getProperty('skipKYCFlag') == 'Y'), dispatchEvent(loanOfferScreen, 'custom:setProperty', {visible : false()}), {}) | if((true() && getProperty('sk"
+    },
+    {
+      "field": "reviewDetailsMainWrapper",
+      "event": "custom:prepareReviewScreen",
+      "expr": "{visible : true()} | setVariable('data', extractReviewPanelData(), reviewDetailsSection.reviewPanelWrapper) | dispatchEvent(reviewDetailsSection.reviewPanelWrapper, 'custom:importdata') | dispatchEvent($field, 'custom:workEmailVisibility')"
+    },
+    {
+      "field": "reviewDetailsMainWrapper",
+      "event": "custom:EnableContinueButton",
+      "expr": "if(getVariable('employmentType', $form) == 'SD' && getProperty('workEmailVerified') == 'true' && getProperty('personalEmailVerified') == 'true', dispatchEvent(reviewDetailsCTA, 'custom:setProperty', {enabled : true()}), {}) | if(!(getVariable('employmentType', $form) == 'SD' && getProperty('workEmai"
+    },
+    {
+      "field": "reviewDetailsMainWrapper",
+      "event": "custom:showemailOtpScreen",
+      "expr": "dispatchEvent(emailVerificationOtpScreenMainWrapper, 'custom:setProperty', {visible : true()})"
+    },
+    {
+      "field": "reviewDetailsMainWrapper",
+      "event": "custom:workEmailVisibility",
+      "expr": "if(getVariable('employmentType', $form) == 'SD', dispatchEvent(reviewDetailsSection.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper, 'custom:setProperty', {visible : true()}), {}) | if(getVariable('employmentType', $form) == 'SD', dispatchEvent(reviewDetails"
+    },
+    {
+      "field": "reviewDetailsSection",
+      "event": "custom:otpEmailValidationFatalError",
+      "expr": "dispatchEvent($form.reviewDetailsMainWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.errorPanel, 'custom:setProperty', {visible : true()})"
+    },
+    {
+      "field": "reviewDetailsSection",
+      "event": "custom:showWorkemailOtpScreen",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/GenerateEmailOTP.json'), 'POST', {\"requestString\": {\"mobileNo\": getProperty('mob'),\"partnerJourneyID\": getProperty('pjid'),\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"journeyID\": $form.hiddenFieldsPane"
+    },
+    {
+      "field": "reviewDetailsSection",
+      "event": "custom:addressDecRWDYes",
+      "expr": "sadApiAddressSelectionHandler('0')"
+    },
+    {
+      "field": "reviewDetailsSection",
+      "event": "custom:workEmailVerified",
+      "expr": "if(getProperty('employmentType') == 'SD' && getProperty('personalEmailVerified') == 'true', dispatchEvent(reviewDetailsCTA, 'custom:setProperty', {enabled : true()}), {}) | if(!(getProperty('employmentType') == 'SD' && getProperty('personalEmailVerified') == 'true'), dispatchEvent(reviewDetailsCTA, "
+    },
+    {
+      "field": "reviewDetailsSection",
+      "event": "custom:wsdlSuccess_043091_1774596098464",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.emailModalPop.emailOtpTestFrag.aadharOtpPanel.otpSubPanel.resendEmailOtp, 'custom:resetOtpCounter'), {}) | if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.emailModalPop.emailOtpTestFrag."
+    },
+    {
+      "field": "reviewDetailsSection",
+      "event": "custom:addressDecRWDNo",
+      "expr": "sadApiAddressSelectionHandler('1')"
+    },
+    {
+      "field": "reviewDetailsSection",
+      "event": "custom:emailOtpAttemptsExhausted",
+      "expr": "dispatchEvent($form.reviewDetailsMainWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.errorPanel, 'custom:setProperty', {visible : true()})"
+    },
+    {
+      "field": "reviewDetailsSection",
+      "event": "custom:personalEmailVerified",
+      "expr": "if(getProperty('employmentType') == 'SD' && getProperty('workEmailVerified') == 'true', dispatchEvent(reviewDetailsCTA, 'custom:setProperty', {enabled : true()}), {}) | if(!(getProperty('employmentType') == 'SD' && getProperty('workEmailVerified') == 'true'), dispatchEvent(reviewDetailsCTA, 'custom:"
+    },
+    {
+      "field": "reviewDetailsSection",
+      "event": "custom:showemailOtpScreen",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/GenerateEmailOTP.json'), 'POST', {\"requestString\": {\"mobileNo\": getProperty('mob'),\"partnerJourneyID\": getProperty('pjid'),\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"journeyID\": $form.hiddenFieldsPane"
+    },
+    {
+      "field": "reviewDetailsSection",
+      "event": "custom:wsdlSuccess_857999_1774596098464",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.emailModalPop.emailOtpTestFrag.aadharOtpPanel.otpSubPanel.resendWorkEmailOtp, 'custom:resetOtpCounter'), {}) | if(toObject($event.payload.body).status.responseCode == '0', assetsAssistedMaskedEmailPrefill('work'), {}) |"
+    },
+    {
+      "field": "reviewDetailsSection",
+      "event": "custom:showSOCPopUp",
+      "expr": "dispatchEvent($form.socModal, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.socModal.socPopUp.socmaintablewrapper.row2.borrowerName, 'custom:setProperty', {value : reviewPanelWrapper.personalDetailsWrapper.personalDetails.personalDetailsMinWrapper.pDWrapper1.fullNameTextWrapper.ful"
+    },
+    {
+      "field": "reviewDetailsCTA",
+      "event": "custom:wsdlSuccess_761026_1774950772229",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.hiddenFieldsPanel.aseRetryCount, 'custom:setProperty', {value : toObject($event.payload.body).maxCount}), {}) | if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.hiddenFieldsPanel.aseRetry"
+    },
+    {
+      "field": "reviewDetailsCTA",
+      "event": "custom:wsdlError_592192_1774950772229",
+      "expr": "dispatchEvent($form.reviewDetailsMainWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.errorPanel, 'custom:setProperty', {visible : true()}) | dispatchEvent($form, 'custom:bre3FailureHandler') | setVariable('apiStatus.sad', false(), $form) | setVariable('currentState', 'SAVE_"
+    },
+    {
+      "field": "reviewDetailsCTA",
+      "event": "custom:wsdlSuccess_592192_1774950772229",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_592192_1774950772229', 'custom:decryptError_592192_1774950772229')"
+    },
+    {
+      "field": "reviewDetailsCTA",
+      "event": "custom:initiate_getSTPNSTP",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_loan_forms/api/xpressAssist/getSTPorNonSTPDetails.json'), 'POST', {\"requestString\": {\"mobileNo\": toString(getVariable('mob')),\"journeyID\": getVariable('journeyID', $form),\"journeyName\": getVariable('journeyName', $form),\"partnerJourney"
+    },
+    {
+      "field": "reviewDetailsCTA",
+      "event": "custom:wsdlError_761026_1774950772229",
+      "expr": "dispatchEvent($form.analysingCustomerCreditPopup, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.errorPanel, 'custom:setProperty', {visible : true()}) | dispatchEvent($form, 'custom:bre3FailureHandler') | setVariable('apiStatus.stpCheck', false(), $field) | setVariable('currentStat"
+    },
+    {
+      "field": "reviewDetailsCTA",
+      "event": "custom:decryptSuccess_592192_1774950772229",
+      "expr": "if(toObject($event.payload).status.responseCode == '0', dispatchEvent($form.reviewDetailsMainWrapper, 'custom:setProperty', {visible : false()}), {}) | if(toObject($event.payload).status.responseCode == '0', dispatchEvent($form.analysingCustomerCreditPopup, 'custom:setProperty', {visible : true()}),"
+    },
+    {
+      "field": "reviewDetailsCTA",
+      "event": "click",
+      "expr": "if((true() && (validate($form.reviewDetailsMainWrapper.reviewDetailsSection.reviewPanelWrapper.personalDetailsWrapper.personalDetails.personalDetailsMinWrapper.pdWrapper2.currentAddressCheckbox).length==0 && (getVariable('employmentType', $form) != 'SD' || getVariable('workEmailVerified', $form) == "
+    },
+    {
+      "field": "docuploadMainWrapper",
+      "event": "custom:prepareDocUpload",
+      "expr": "{visible : true()} | dispatchEvent(reviewDetailsMainWrapper, 'custom:setProperty', {visible : false()}) | dispatchEvent(docUploadPanel.uploadDocumentsSection, 'custom:prepareDocUploadScreen')"
+    },
+    {
+      "field": "docUploadSubmit",
+      "event": "custom:wsdlSuccess_111717_1776764853134",
+      "expr": "awaitFn(decrypt($event.payload.body, $event.payload.originalRequest), 'custom:decryptSuccess_111717_1776764853134', 'custom:decryptError_111717_1776764853134')"
+    },
+    {
+      "field": "docUploadSubmit",
+      "event": "custom:customerDocUpload",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_assistedLoansCommon_services/api/updateApplicationStatus.json'), 'POST', encrypt({body: {\"requestContext\": {\"journeyID\": getProperty('journeyID'),\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"productName\": 'PL'},\"req"
+    },
+    {
+      "field": "docUploadSubmit",
+      "event": "click",
+      "expr": "if((true() && $form.hiddenFieldsPanel.isLOSDOCDocumentUploadScreen.$value == 'Y'), dispatchEvent($field, 'custom:customerDocUpload'), {}) | if((true() && $form.hiddenFieldsPanel.isLOSDOCDocumentUploadScreen.$value == 'Y'), dispatchEvent($form.docLOSThankYouPanel, 'custom:setProperty', {visible : tru"
+    },
+    {
+      "field": "proceedPerfios",
+      "event": "click",
+      "expr": "if((true() && ($form.hiddenFieldsPanel.hiddenEkycStatusFlag.$value == 'N' && $form.hiddenFieldsPanel.hiddenDigiliteFlag.$value == 'N')), setFieldProperty($field,'currentState','CUSTOMER_PERFIOS_PROCEED'), {}) | if((true() && ($form.hiddenFieldsPanel.hiddenEkycStatusFlag.$value == 'N' && $form.hidden"
+    },
+    {
+      "field": "emailOtpTestFrag",
+      "event": "custom:resendEmailOtpGen",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/GenerateEmailOTP.json'), 'POST', {\"requestString\": {\"mobileNo\": getProperty('mob'),\"partnerJourneyID\": getProperty('pjid'),\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"journeyID\": $form.hiddenFieldsPane"
+    },
+    {
+      "field": "emailOtpTestFrag",
+      "event": "custom:wsdlSuccess_286299_1763024589039",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent(aadharOtpPanel.otpSubPanel.resendWorkEmailOtp, 'custom:resetOtpCounter'), {})"
+    },
+    {
+      "field": "emailOtpTestFrag",
+      "event": "custom:goBackToReviewDetails",
+      "expr": "dispatchEvent($form.reviewDetailsMainWrapper, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.reviewDetailsMainWrapper.reviewDetailsSection.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.personalEmailWrapper.verifyPersonalEmailButton, 'custom:setProperty', {"
+    },
+    {
+      "field": "emailOtpTestFrag",
+      "event": "custom:wsdlSuccess_145648_1763024589038",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent(aadharOtpPanel.otpSubPanel.resendEmailOtp, 'custom:resetOtpCounter'), {})"
+    },
+    {
+      "field": "emailOtpTestFrag",
+      "event": "initialize",
+      "expr": "dispatchEvent(aadharOtpPanel.otpSubPanel.resendEmailOtp, 'custom:resetOtpCounter') | dispatchEvent(aadharOtpPanel.otpSubPanel.resendWorkEmailOtp, 'custom:resetOtpCounter') | dispatchEvent($form.otpValidationWrapper.otpValidationSection.aadharOtpPanel.otpInput, 'custom:setProperty', {valid : true()})"
+    },
+    {
+      "field": "emailOtpTestFrag",
+      "event": "custom:goBackToReviewDetailsWork",
+      "expr": "dispatchEvent($form.reviewDetailsMainWrapper, 'custom:setProperty', {visible : true()}) | dispatchEvent($form.reviewDetailsMainWrapper.reviewDetailsSection.reviewPanelWrapper.verifyEmailMainWrapper.verifyEmailWrapper.verifyEmail.workEmailWrapper.verifyWorkEmailButton, 'custom:setProperty', {visible "
+    },
+    {
+      "field": "emailOtpTestFrag",
+      "event": "custom:resendWorkEmailOtpGen",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/GenerateEmailOTP.json'), 'POST', {\"requestString\": {\"mobileNo\": getProperty('mob'),\"partnerJourneyID\": getProperty('pjid'),\"journeyName\": $form.hiddenFieldsPanel.journeyNameHidden.$value,\"journeyID\": $form.hiddenFieldsPane"
+    },
+    {
+      "field": "emailsubmitOTP",
+      "event": "custom:wsdlError_601728_1762189146452",
+      "expr": "dispatchEvent($form, 'custom:enableEmailOtpSubmitButton')"
+    },
+    {
+      "field": "emailsubmitOTP",
+      "event": "custom:wsdlSuccess_601728_1762189146452",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.reviewDetailsMainWrapper, 'custom:setProperty', {visible : true()}), {}) | if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.reviewDetailsMainWrapper.reviewDetailsSection.reviewPanelWrappe"
+    },
+    {
+      "field": "emailsubmitOTP",
+      "event": "click",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/validateEmailOTP.json'), 'POST', {\"requestString\": {\"mobileNo\": getProperty('mob'),\"passwordValue\": $form.emailModalPop.emailOtpTestFrag.aadharOtpPanel.otpInput.$value,\"partnerJourneyID\": getProperty('pjid'),\"journeyName\":"
+    },
+    {
+      "field": "emailWorksubmitOTP",
+      "event": "custom:wsdlSuccess_176558_1762262157561",
+      "expr": "if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.reviewDetailsMainWrapper, 'custom:setProperty', {visible : true()}), {}) | if(toObject($event.payload.body).status.responseCode == '0', dispatchEvent($form.reviewDetailsMainWrapper.reviewDetailsSection.reviewPanelWrappe"
+    },
+    {
+      "field": "emailWorksubmitOTP",
+      "event": "custom:wsdlError_176558_1762262157561",
+      "expr": "dispatchEvent($form, 'custom:enableWorkEmailOtpSubmitButton')"
+    },
+    {
+      "field": "emailWorksubmitOTP",
+      "event": "click",
+      "expr": "awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/validateEmailOTP.json'), 'POST', {\"requestString\": {\"mobileNo\": getProperty('mob'),\"passwordValue\": $form.emailModalPop.emailOtpTestFrag.aadharOtpPanel.otpInput.$value,\"partnerJourneyID\": getProperty('pjid'),\"journeyName\":"
+    },
+    {
+      "field": "incRecalculateInput_old",
+      "event": "change",
+      "expr": "if(contains($event.payload.changes[].propertyName, 'value'), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/FetchMasterData.PL.ADOBE_IRR_PF_MASTER_BASIS_DAP.EMPLOYEE_CAT-' & getProperty('globalFinalCategory') & '.LOWER_INCOME-' & toString(assetsAssistedNearestNetIncome"
+    },
+    {
+      "field": "incRecalculateInput_old",
+      "event": "custom:wsdlError_729082_1761740461108",
+      "expr": "dispatchEvent($form.recalculatePanel.recalculateSubmitBtn, 'custom:setProperty', {enabled : false()})"
+    },
+    {
+      "field": "incRecalculateInput_old",
+      "event": "custom:wsdlSuccess_729082_1761740461108",
+      "expr": "if(length(toObject($event.payload.body)[*]) > 0, assetsAssistedCalculateIRRData(toObject($event.payload.body)[*],getProperty('globalFinalCategory')), {}) | if(length(toObject($event.payload.body)[*]) > 0, dispatchEvent($form.recalculatePanel.recalculateSubmitBtn, 'custom:setProperty', {enabled : tru"
+    },
+    {
+      "field": "incRecalculateInput",
+      "event": "change",
+      "expr": "if(contains($event.payload.changes[].propertyName, 'value'), awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/FetchMasterData.PL.ADOBE_IRR_PF_MASTER_BASIS_DAP.EMPLOYEE_CAT-' & getProperty('globalFinalCategory') & '.LOWER_INCOME-' & toString(assetsAssistedNearestNetIncome"
+    },
+    {
+      "field": "incRecalculateInput",
+      "event": "custom:wsdlError_923312_1761742863806",
+      "expr": "dispatchEvent($form.recalculatePanel.recalculateSubmitBtn, 'custom:setProperty', {enabled : false()})"
+    },
+    {
+      "field": "incRecalculateInput",
+      "event": "custom:wsdlSuccess_923312_1761742863806",
+      "expr": "if(length(toObject($event.payload.body)[*]) > 0, assetsAssistedCalculateIRRData(toObject($event.payload.body)[*],getProperty('globalFinalCategory')), {}) | if(length(toObject($event.payload.body)[*]) > 0, dispatchEvent($form.recalculatePanel.recalculateSubmitBtn, 'custom:setProperty', {enabled : tru"
+    },
+    {
+      "field": "recalculateSubmitBtn",
+      "event": "custom:wsdlSuccess_597329_1762423314909",
+      "expr": "if(length(toObject($event.payload.body)[*]) > 0, assetsAssistedTenureMultiplierResponse(toObject($event.payload.body)[*]), {}) | if(length(toObject($event.payload.body)[*]) > 0, dispatchEvent($form.recalculatePanel.panelIncomeRecalculate.incRecalculateInput, 'custom:setProperty', {value : `null`}), "
+    },
+    {
+      "field": "recalculateSubmitBtn",
+      "event": "custom:wsdlError_597329_1762423314909",
+      "expr": "dispatchEvent($form.recalculatePanel, 'custom:setProperty', {visible : false()}) | dispatchEvent($form.recalculatePanel.panelIncomeRecalculate.incRecalculateInput, 'custom:setProperty', {value : `null`})"
+    },
+    {
+      "field": "recalculateSubmitBtn",
+      "event": "click",
+      "expr": "setProperty('recalculateIPA','true') | awaitFn(retryHandler(requestWithRetry(externalize('/content/hdfc_pl_forms/api/FetchMasterData.PL.ADOBE_MULTIPLIER_MASTER_BASIS_DAP.COMBINEDKEY-' & getProperty('combined_key') & '.isExact-true.json'), 'GET', {}, {\"Content-Type\": 'application/json'}, 'custom:wsdl"
+    },
+    {
+      "field": "gstItrFragment",
+      "event": "custom:gstItrStepSkipped",
+      "expr": "dispatchEvent(customerDashboardWrapper, 'custom:setProperty', {visible : true()}) | {visible : false()} | handleContinueOrSkip('skip')"
+    },
+    {
+      "field": "gstItrFragment",
+      "event": "custom:gstItrVerificationStarted",
+      "expr": "if(contains(getVariable('gstItrVerifyMode', $form), 'GST'), dispatchEvent(verifyGstSection, 'custom:gstVerification'), {}) | if(contains(getVariable('gstItrVerifyMode', $form), 'ITR'), dispatchEvent(verifyItrSection, 'custom:itrVerification'), {}) | {visible : true()}"
+    },
+    {
+      "field": "gstItrFragment",
+      "event": "custom:gstItrStepContinued",
+      "expr": "dispatchEvent(customerDashboardWrapper, 'custom:setProperty', {visible : true()}) | {visible : false()} | handleContinueOrSkip('continue')"
+    }
+  ]
+}
