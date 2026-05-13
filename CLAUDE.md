@@ -2,6 +2,17 @@
 
 This project caches AEM form models locally under `.form-context/` (gitignored) so Claude has field-level context when working on form logic — without polluting the project repo or burning context on noise.
 
+---
+
+## IMPORTANT: These files are READ-ONLY — never edit them
+
+`.model.json`, `.summary.json`, and `.micro.json` are **cached copies** of the AEM JCR.
+There is no POST API to push changes back. Editing them locally does nothing in AEM.
+
+**Never modify these files.** If a bug fix requires changing a rule in AEM, use the Rule Editor guidance below to tell the user exactly what to change and where.
+
+---
+
 ## File tiers (read in this order, stop when you have enough)
 
 | Tier | File | Size | Use when |
@@ -158,10 +169,69 @@ Never load more than 2 fragment files into context at once unless the bug explic
 
 ---
 
-## If .aem-auth is missing
+## If .aem-auth is missing or expired
 
-Tell the user:
-> "I need your AEM session cookie. In Chrome DevTools on the AEM tab: Network → click any request → Request Headers → copy the full `Cookie:` header value. Paste it here and I'll save it to `.form-context/.aem-auth`."
+If `.form-context/.aem-auth` is missing, tell the user:
+
+> I need your AEM session cookie. Here's how to get it:
+>
+> 1. Open this URL in your browser — it will redirect you to AEM login:
+>    `<base-host><content-path>/jcr:content/root/section/form.model.json`
+> 2. Log in with your AEM credentials.
+> 3. After login, open DevTools (F12) → **Network** tab → click any request
+>    → **Request Headers** → find the `Cookie:` header → copy the **entire value**.
+> 4. Paste it here.
+
+When the user pastes the cookie, **use the Write tool** to save it to `.form-context/.aem-auth`.
+
+If a fetch returns non-JSON (curl returns an HTML login page), the auth token is expired. Apply the same recovery flow — show the JCR URL, ask for a fresh cookie, **use the Write tool** to overwrite `.form-context/.aem-auth`, then retry automatically.
+
+---
+
+## Fixing rules in AEM — Rule Editor steps
+
+When a bug fix requires modifying an AEM form rule, **do NOT attempt to edit `.model.json`** — it is a read-only cache. There is no API to push changes back to AEM.
+
+Instead, provide the user with these steps:
+
+### Step 1 — Open the Rule Editor
+
+**For a field in the base form:**
+1. Go to: `<base-host>/aem/forms.html<parent-folder-path>`
+   (e.g. `https://author-xxx.adobeaemcloud.com/aem/forms.html/content/forms/af/hdfc/loans/assisted/bl`)
+2. Hover over the form → click **Edit**
+3. In the form editor, click on the field: **`<fieldName>`**
+4. In the top toolbar, click the **Rule Editor** icon (lightning bolt ⚡)
+
+**For a field inside a fragment:**
+1. Go to: `<base-host>/aem/forms.html<fragment-parent-folder-path>`
+2. Hover over the fragment → click **Edit**
+3. In the fragment editor, click on the field: **`<fieldName>`**
+4. Click the **Rule Editor** icon
+
+### Step 2 — Find the rule to change
+
+- Select the field: **`<fieldName>`** in the Rule Editor panel
+- Look for the event: **`<eventName>`** (e.g. `initialize`, `click`, `custom:someEvent`)
+- The current expression is:
+  ```
+  <paste current expression from summary.json>
+  ```
+
+### Step 3 — Replace with
+
+```
+<paste the exact new expression the user should enter>
+```
+
+---
+
+**Always include in your Rule Editor guidance:**
+- The exact field `name` (the semantic name from `summary.json`, NOT the AEM-generated key)
+- The event type (`initialize`, `click`, etc.)
+- Whether it's in the base form or a fragment — and which fragment
+- The current expression (from `summary.json`) vs. the new expression
+- The AEM Forms console URL so the user can navigate directly
 
 ---
 
@@ -176,14 +246,14 @@ Everything lives under `.form-context/` — gitignored, never goes into the proj
 │   └── distill.cjs
 └── forms/
     └── <form-name>/
-        ├── <form-name>.model.json      ← raw (ground truth)
-        ├── <form-name>.summary.json    ← distilled
-        ├── <form-name>.micro.json      ← field index
+        ├── <form-name>.model.json      ← raw (ground truth) — READ ONLY
+        ├── <form-name>.summary.json    ← distilled — READ ONLY
+        ├── <form-name>.micro.json      ← field index — READ ONLY
         ├── fragments.json              ← fragment index
         └── fragments/
-            ├── <name>.model.json       ← raw
-            ├── <name>.summary.json     ← distilled
-            └── <name>.micro.json       ← large fragments only
+            ├── <name>.model.json       ← raw — READ ONLY
+            ├── <name>.summary.json     ← distilled — READ ONLY
+            └── <name>.micro.json       ← large fragments only — READ ONLY
 ```
 
 ## Setting up for a new form
