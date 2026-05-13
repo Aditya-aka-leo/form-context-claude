@@ -25,6 +25,7 @@ forms/
 
 ## Install into a project
 
+**macOS / Linux**
 ```bash
 # From the project root (e.g. forms-engine/)
 bash /path/to/aem-forms-context/scripts/install.sh
@@ -34,7 +35,17 @@ git clone https://github.com/Aditya-aka-leo/aem-forms-context.git
 bash aem-forms-context/scripts/install.sh /path/to/your/project
 ```
 
-This copies the command files into `.claude/commands/` and adds `.aem-auth` to `.gitignore`.
+**Windows (PowerShell)**
+```powershell
+# From the project root (e.g. forms-engine/)
+& "C:\path\to\aem-forms-context\scripts\install.ps1"
+
+# Or clone and install
+git clone https://github.com/Aditya-aka-leo/aem-forms-context.git
+& ".\aem-forms-context\scripts\install.ps1" "C:\path\to\your\project"
+```
+
+This copies the command files into `.claude/commands/` and adds `.form-context/` to `.gitignore`.
 
 ## Usage
 
